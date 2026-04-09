@@ -1,0 +1,9 @@
+const nav=document.querySelector('.nav');
+if(nav)window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20),{passive:true});
+const tog=document.querySelector('.nav-toggle');
+const nl=document.querySelector('.nav-links');
+if(tog&&nl){tog.addEventListener('click',()=>{tog.classList.toggle('open');nl.classList.toggle('open');});nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{tog.classList.remove('open');nl.classList.remove('open');}));}
+const cur=location.pathname.split('/').pop()||'index.html';
+document.querySelectorAll('.nav-links a').forEach(a=>{const h=a.getAttribute('href')||'';if(h===cur||h.endsWith(cur)||(cur===''&&h.includes('index')))a.classList.add('active');});
+const els=document.querySelectorAll('.reveal');
+if(els.length){const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -30px 0px'});els.forEach(el=>io.observe(el));}
