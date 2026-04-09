@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercari Usability Evaluation &mdash; Blake Warner</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Blake<span>.</span>Warner</a>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="../work.html">Work</a>
+      <a href="../about.html">About</a>
+      <a href="../making.html">Making</a>
+      <a href="../contact.html" class="nav-cta">Get in touch</a>
+    </div>
+  </div>
+</nav>
+<main class="page">
+  <div class="case-hero">
+    <a href="../work.html" class="case-back">Back to work</a>
+    <h1>Mercari Usability Evaluation</h1>
+    <p class="case-sub">Heuristic and user-based evaluation of Mercari's mobile marketplace, surfacing 14 issues including a severity-4 critical bug.</p>
+  </div>
+  <div class="case-meta"><div><div class="cm-label">My Role</div><div class="cm-val">UX Researcher &amp; Evaluator</div></div><div><div class="cm-label">Timeline</div><div class="cm-val">4 weeks</div></div><div><div class="cm-label">Tools</div><div class="cm-val">Figma, Notion, Zoom</div></div><div><div class="cm-label">Method</div><div class="cm-val">Heuristic eval + usability testing</div></div></div>
+  <div style="max-width:100%;overflow:hidden;background:var(--bg2);border-bottom:1px solid var(--line)">
+    <div class="thumb" style="height:320px">
+  <img src="https://cdn.myportfolio.com/f7f1b0b7-fc0d-438a-83d2-fbc4a115d478/056ade46-d590-47a6-898f-ae941006f7a3_rwc_0x0x1438x1078x32.png" alt="" loading="lazy" onerror="this.style.display='none'">
+  <div class="thumb-fallback" style="background:linear-gradient(135deg,#1e1a2e,#12101c)">
+    <div class="thumb-icon-wrap">🔍</div>
+  </div>
+</div>
+  </div>
+  <div class="case-body reveal">
+
+    <h2>The Problem</h2>
+    <p>For a marketplace at Mercari's scale, small usability friction in core flows &mdash; listing, searching, checkout &mdash; translates into significant drop-off. I ran a structured evaluation using expert heuristic analysis and task-based usability testing to surface the highest-priority issues.</p>
+
+    <h2>Evaluation Goals</h2>
+    <ul>
+      <li>How easily can a first-time seller list an item from start to publish?</li>
+      <li>How efficiently can a buyer search, filter, and evaluate an item?</li>
+      <li>Where does checkout create confusion or hesitation?</li>
+    </ul>
+
+    <h2>Method</h2>
+    <h3>Heuristic Evaluation</h3>
+    <p>I evaluated the mobile app against Nielsen's 10 Usability Heuristics across the three primary flows, documenting violations with severity ratings on a 0&ndash;4 scale.</p>
+    <h3>Usability Testing</h3>
+    <p>5 participants with varying e-commerce experience, moderated think-aloud sessions over Zoom. Each completed 3 tasks: listing an item, finding and saving a product, completing a simulated purchase.</p>
+
+    <h2>Key Findings</h2>
+    <ul>
+      <li><strong>Severity 4 &mdash; Listing:</strong> After 6 photos, the app gives no indication the limit was reached. Users kept tapping Add Photo, assuming photos had failed.</li>
+      <li><strong>Severity 3 &mdash; Search filters:</strong> Applying filters requires leaving the results page entirely. Users can't preview result counts while filtering.</li>
+      <li><strong>Severity 3 &mdash; Checkout:</strong> Make Offer and Buy Now buttons are nearly identical in weight. 3 of 5 participants accidentally initiated an offer when they intended to buy.</li>
+      <li><strong>Severity 2 &mdash; Condition labels:</strong> Terms like Good and Like New are undefined. Participants had inconsistent interpretations.</li>
+    </ul>
+
+    <h2>Recommendations</h2>
+    <ul>
+      <li>Add a real-time photo counter (X of 6 added) to the listing screen.</li>
+      <li>Inline filter previews updating result counts without leaving the results page.</li>
+      <li>Visually differentiate Make Offer and Buy Now &mdash; make Buy Now the clear primary CTA.</li>
+      <li>Add a condition guide via tooltip on item condition labels.</li>
+    </ul>
+
+    <h2>Results</h2>
+    <div class="case-callout">
+      <h4>Evaluation outcomes</h4>
+      <ul>
+        <li>14 usability issues documented across 3 flows with severity ratings and annotated screenshots.</li>
+        <li>5 of 5 participants encountered the photo limit bug, confirming severity-4 rating.</li>
+        <li>3 of 5 participants clicked the wrong action (Make Offer vs. Buy Now) during checkout.</li>
+        <li>Delivered prioritized recommendations report with annotated Figma mockups for 4 proposed fixes.</li>
+      </ul>
+    </div>
+
+    <h2>Key Learnings</h2>
+    <div class="case-learning">
+      <h4>What this project taught me</h4>
+      <ul>
+        <li>Heuristic evaluation is a starting point. The photo bug was something I caught in expert review, but 5 users hitting the same wall confirmed how universal it was. Both methods are necessary.</li>
+        <li>Visual hierarchy in CTAs is deceptively hard. Two buttons of equal weight placed side by side get tapped randomly. I now pay close attention to CTA hierarchy in everything I design.</li>
+        <li>Novice users are the most diagnostic. My most useful participant had never used Mercari before. Experienced users develop workarounds and stop noticing problems.</li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="case-nav">
+    <div class="case-nav-link">
+      <span class="case-nav-label">&larr; Previous</span>
+      <a href="case-gamification.html" class="case-nav-title">Gamification &amp; AI</a>
+    </div>
+    <div class="case-nav-link" style="text-align:right">
+      <span class="case-nav-label">Next &rarr;</span>
+      <a href="case-prayr.html" class="case-nav-title">Prayr App Research</a>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Blake<span>.</span>Warner</span>
+    <div class="footer-links">
+      <a href="../work.html">Work</a>
+      <a href="../about.html">About</a>
+      <a href="../making.html">Making</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <span class="footer-copy">&copy; 2026 &middot; Open to full-time roles</span>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

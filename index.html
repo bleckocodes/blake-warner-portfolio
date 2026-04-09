@@ -1,137 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blake Warner - UX Designer</title>
-  <meta name="description" content="UX Designer specializing in SaaS and mobile interfaces. Pacific Northwest.">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SaaS Onboarding Redesign &mdash; Blake Warner</title>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Blake<span>.</span>Warner</a>
+    <a href="../index.html" class="nav-logo">Blake<span>.</span>Warner</a>
     <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <div class="nav-links">
-      <a href="work.html">Work</a>
-      <a href="about.html">About</a>
-      <a href="making.html">Making</a>
-      <a href="contact.html" class="nav-cta">Get in touch</a>
+      <a href="../work.html">Work</a>
+      <a href="../about.html">About</a>
+      <a href="../making.html">Making</a>
+      <a href="../contact.html" class="nav-cta">Get in touch</a>
     </div>
   </div>
 </nav>
 <main class="page">
-  <section class="hero">
-    <div class="hero-content">
-      <p class="hero-eyebrow">UX Designer - Pacific Northwest</p>
-      <h1 class="hero-headline">Designing interfaces that feel <em>effortless</em></h1>
-      <p class="hero-sub">I turn complex workflows into clean, usable products backed by research, built in Figma, tested with real users. Specializing in SaaS and mobile.</p>
-      <div class="hero-actions">
-        <a href="work.html" class="btn btn-primary">View my work</a>
-        <a href="contact.html" class="btn btn-ghost">Get in touch</a>
-      </div>
+  <div class="case-hero">
+    <a href="../work.html" class="case-back">Back to work</a>
+    <h1>SaaS Onboarding Redesign</h1>
+    <p class="case-sub">Redesigning a board management SaaS platform's onboarding to improve activation and cut time-to-first-action.</p>
+  </div>
+  <div class="case-meta"><div><div class="cm-label">My Role</div><div class="cm-val">Lead UX Designer</div></div><div><div class="cm-label">Timeline</div><div class="cm-val">12 weeks (Capstone)</div></div><div><div class="cm-label">Tools</div><div class="cm-val">Figma, FigJam, Maze</div></div><div><div class="cm-label">Context</div><div class="cm-val">Heroic Development</div></div></div>
+  <div style="max-width:100%;overflow:hidden;background:var(--bg2);border-bottom:1px solid var(--line)">
+    <div class="thumb" style="height:320px">
+  <img src="https://cdn.myportfolio.com/f7f1b0b7-fc0d-438a-83d2-fbc4a115d478/1a192995-9d64-4c95-a356-0cc28920595e_rwc_107x1443x678x508x32.png" alt="" loading="lazy" onerror="this.style.display='none'">
+  <div class="thumb-fallback" style="background:linear-gradient(135deg,#1a2e28,#0f1a16)">
+    <div class="thumb-icon-wrap">🧭</div>
+  </div>
+</div>
+  </div>
+  <div class="case-body reveal">
+
+    <h2>The Problem</h2>
+    <p>Onboarding is the moment a new user decides whether to stay or leave. The existing experience dropped users into a blank dashboard with no guidance &mdash; leaving them unsure where to start. Users who did not complete a core action in their first session rarely returned.</p>
+
+    <h2>Users &amp; Research</h2>
+    <p>I ran discovery interviews with 6 target users &mdash; administrators and team leads managing organizational meetings &mdash; and a competitive analysis of onboarding patterns across Notion, Monday.com, ClickUp, Loom, and Asana.</p>
+    <ul>
+      <li>Users felt overwhelmed by too many options at once &mdash; they needed one clear first step.</li>
+      <li>The existing flow skipped explaining core value &mdash; users weren't sure what success looked like.</li>
+      <li>Users expected progress indicators to know how far they'd gotten through setup.</li>
+      <li>Personalization cues like role selection made users feel the product was built for them specifically.</li>
+    </ul>
+
+    <h2>Design Process</h2>
+    <h3>Discovery &rarr; Define</h3>
+    <p>I mapped the current new-user journey and identified 4 critical drop-off moments. I developed user personas from interviews and set a primary goal: get new users to their first core action within 5 minutes of signing up.</p>
+    <h3>Ideation &rarr; Wireframing</h3>
+    <p>I wireframed 3 competing flows focused on progressive disclosure &mdash; showing only what was relevant to the current step. I ran a critique with my capstone team to pressure-test each approach before committing.</p>
+    <h3>Prototyping &rarr; Testing</h3>
+    <p>I built a high-fidelity interactive prototype in Figma and ran 5 moderated usability tests. Participants received a task prompt with no instructions &mdash; I observed where they hesitated, succeeded, and gave up.</p>
+
+    <h2>Key Design Decisions</h2>
+    <ul>
+      <li>Reduced onboarding from 9 steps to 4 by deferring non-critical configuration to later sessions.</li>
+      <li>Added a persistent progress bar so users always knew how close they were to finishing setup.</li>
+      <li>Introduced role selection at step 1 to personalize the rest of the flow.</li>
+      <li>Replaced the empty dashboard with a quick-start checklist surfacing 3 recommended next actions.</li>
+    </ul>
+
+    <h2>Results</h2>
+    <div class="case-callout">
+      <h4>Outcomes</h4>
+      <ul>
+        <li>4 of 5 usability test participants completed onboarding without assistance (up from 2 of 5 in the original flow).</li>
+        <li>Average time-to-first-action dropped from 8+ minutes to under 3.5 minutes in prototype testing.</li>
+        <li>Final design approved by stakeholders in a single revision cycle.</li>
+        <li>Delivered annotated Figma handoff file and complete flow documentation to development.</li>
+      </ul>
     </div>
-    <div class="hero-cards">
-      <div class="hcard">
-        <div class="hcard-label">Current focus</div>
-        <div class="hcard-val"><strong>SaaS and mobile UX</strong> - discovery through prototyping and design systems</div>
-      </div>
-      <div class="stat-row">
-        <div class="stat"><div class="stat-n">2+</div><div class="stat-l">Years professional experience</div></div>
-        <div class="stat"><div class="stat-n">6+</div><div class="stat-l">SaaS products shipped</div></div>
-      </div>
-      <div class="stat-row">
-        <div class="stat"><div class="stat-n">Figma</div><div class="stat-l">Advanced - design systems and prototyping</div></div>
-        <div class="stat"><div class="stat-n">Summa</div><div class="stat-l">Cum Laude, B.A. UX Design</div></div>
-      </div>
+
+    <h2>Key Learnings</h2>
+    <div class="case-learning">
+      <h4>What this project taught me</h4>
+      <ul>
+        <li>Less is more in onboarding. Every step I removed improved completion. My instinct was to show users everything the product could do; research said show them one thing at a time.</li>
+        <li>Testing early is humbling and necessary. My first prototype had a navigation assumption that every single participant got wrong. Without watching real users, I never would have caught it.</li>
+        <li>Onboarding is a product promise. The clarity and tone of the first-run experience sets expectations for everything that follows. Designing it well is designing trust.</li>
+      </ul>
     </div>
-  </section>
-  <hr class="divider">
-  <section class="section">
-    <p class="s-tag reveal">Selected Work</p>
-    <h2 class="s-title reveal d1">Case studies and <em>projects</em></h2>
-    <p class="s-intro reveal d2">End-to-end UX work across real products - research, wireframing, prototyping, and usability testing.</p>
-    <div class="grid">
-      <a href="pages/case-onboarding.html" class="card card-featured reveal">
-        <div class="thumb" style="height:280px">
-          <img src="https://cdn.myportfolio.com/f7f1b0b7-fc0d-438a-83d2-fbc4a115d478/1a192995-9d64-4c95-a356-0cc28920595e_rwc_107x1443x678x508x32.png" alt="SaaS Onboarding" loading="lazy" onerror="this.style.display='none'">
-          <div class="thumb-fallback" style="background:linear-gradient(135deg,#1a2e28,#0f1a16)"><div class="thumb-icon-wrap">&#x1F9ED;</div></div>
-        </div>
-        <div class="card-body">
-          <span class="card-tag">Case Study - Capstone</span>
-          <h2 class="card-title">SaaS Onboarding Redesign</h2>
-          <p class="card-desc">Redesigning a board management SaaS onboarding experience. Cut time-to-first-action from 8+ minutes to under 3.5 minutes.</p>
-        </div>
-        <div class="card-footer"><span class="card-year">2024 - Heroic Development</span><span class="card-arrow">-></span></div>
-      </a>
-      <a href="pages/case-gamification.html" class="card reveal">
-        <div class="thumb" style="height:220px">
-          <img src="https://cdn.myportfolio.com/f7f1b0b7-fc0d-438a-83d2-fbc4a115d478/b746e9d0-93e8-484f-8886-b707d501b00f_rwc_189x0x945x709x32.png" alt="Gamification" loading="lazy" onerror="this.style.display='none'">
-          <div class="thumb-fallback" style="background:linear-gradient(135deg,#2a1e0a,#1a1205)"><div class="thumb-icon-wrap">&#x1F3AE;</div></div>
-        </div>
-        <div class="card-body">
-          <span class="card-tag">Case Study - Concept</span>
-          <h2 class="card-title">Gamification and AI Daily Motivation</h2>
-          <p class="card-desc">How AI-powered game mechanics can drive daily habits without punishing failure. Research, ideation, prototype testing.</p>
-        </div>
-        <div class="card-footer"><span class="card-year">2023 - Academic</span><span class="card-arrow">-></span></div>
-      </a>
-      <a href="pages/case-mercari.html" class="card reveal">
-        <div class="thumb" style="height:220px">
-          <img src="https://cdn.myportfolio.com/f7f1b0b7-fc0d-438a-83d2-fbc4a115d478/056ade46-d590-47a6-898f-ae941006f7a3_rwc_0x0x1438x1078x32.png" alt="Mercari" loading="lazy" onerror="this.style.display='none'">
-          <div class="thumb-fallback" style="background:linear-gradient(135deg,#1e1a2e,#12101c)"><div class="thumb-icon-wrap">&#x1F50D;</div></div>
-        </div>
-        <div class="card-body">
-          <span class="card-tag">Usability Study</span>
-          <h2 class="card-title">Mercari Usability Evaluation</h2>
-          <p class="card-desc">Heuristic and user-based eval of Mercari mobile marketplace. 14 issues found including a severity-4 critical bug.</p>
-        </div>
-        <div class="card-footer"><span class="card-year">2023 - Academic</span><span class="card-arrow">-></span></div>
-      </a>
-      <a href="pages/case-prayr.html" class="card reveal">
-        <div class="thumb" style="height:220px">
-          <img src="https://cdn.myportfolio.com/f7f1b0b7-fc0d-438a-83d2-fbc4a115d478/f16dbaf9-6f36-424c-9cd9-266f22ea0928_carw_4x3x32.png" alt="Prayr" loading="lazy" onerror="this.style.display='none'">
-          <div class="thumb-fallback" style="background:linear-gradient(135deg,#2e1a1a,#1c1010)"><div class="thumb-icon-wrap">&#x1F64F;</div></div>
-        </div>
-        <div class="card-body">
-          <span class="card-tag">Research Study</span>
-          <h2 class="card-title">Prayr App UX Research</h2>
-          <p class="card-desc">Mixed-methods research for a faith-based mobile app. User interviews, affinity mapping, 6 design recommendations.</p>
-        </div>
-        <div class="card-footer"><span class="card-year">2023 - Academic</span><span class="card-arrow">-></span></div>
-      </a>
-      <a href="pages/case-vr.html" class="card reveal">
-        <div class="thumb" style="height:220px">
-          <img src="https://cdn.myportfolio.com/f7f1b0b7-fc0d-438a-83d2-fbc4a115d478/4a93f6d1-407c-4d9e-9eaf-6ab02e2c5d58_rwc_0x0x807x606x32.png" alt="VR" loading="lazy" onerror="this.style.display='none'">
-          <div class="thumb-fallback" style="background:linear-gradient(135deg,#1a1e2e,#10121c)"><div class="thumb-icon-wrap">&#x1F97D;</div></div>
-        </div>
-        <div class="card-body">
-          <span class="card-tag">Discovery Research</span>
-          <h2 class="card-title">VR Skill Labs Discovery</h2>
-          <p class="card-desc">Discovery research into VR in classrooms. The number one barrier was classroom management not content.</p>
-        </div>
-        <div class="card-footer"><span class="card-year">2023 - Academic</span><span class="card-arrow">-></span></div>
-      </a>
-      <a href="pages/professional.html" class="card reveal">
-        <div class="thumb" style="height:220px">
-          <div class="thumb-fallback" style="background:linear-gradient(135deg,#1a2e1e,#101c12)"><div class="thumb-icon-wrap">&#x1F4BC;</div></div>
-        </div>
-        <div class="card-body">
-          <span class="card-tag">Professional Work</span>
-          <h2 class="card-title">Heroic Dev and Supergreen</h2>
-          <p class="card-desc">Two years of industry SaaS design - design systems, feature flows, responsive web and mobile interfaces.</p>
-        </div>
-        <div class="card-footer"><span class="card-year">2023-2026 - Industry</span><span class="card-arrow">-></span></div>
-      </a>
+
+  </div>
+  <div class="case-nav">
+    <div class="case-nav-link">
+      <span class="case-nav-label">&larr; Previous</span>
+      <a href="../work.html" class="case-nav-title">All work</a>
     </div>
-  </section>
-  <div class="teaser">
-    <div class="teaser-inner">
-      <div>
-        <p class="s-tag reveal" style="margin-bottom:.5rem">Beyond the Screen</p>
-        <p class="reveal d1"><strong>I build things in the real world too.</strong> Mandalorian armor, 3D-printed blasters, painted miniatures - the same precision and iteration I bring to UX, applied to physical making.</p>
-      </div>
-      <a href="making.html" class="btn btn-ghost reveal d2">See what I make</a>
+    <div class="case-nav-link" style="text-align:right">
+      <span class="case-nav-label">Next &rarr;</span>
+      <a href="case-gamification.html" class="case-nav-title">Gamification &amp; AI</a>
     </div>
   </div>
 </main>
@@ -139,14 +100,14 @@
   <div class="footer-inner">
     <span class="footer-brand">Blake<span>.</span>Warner</span>
     <div class="footer-links">
-      <a href="work.html">Work</a>
-      <a href="about.html">About</a>
-      <a href="making.html">Making</a>
-      <a href="contact.html">Contact</a>
+      <a href="../work.html">Work</a>
+      <a href="../about.html">About</a>
+      <a href="../making.html">Making</a>
+      <a href="../contact.html">Contact</a>
     </div>
-    <span class="footer-copy">2026 - Open to full-time roles</span>
+    <span class="footer-copy">&copy; 2026 &middot; Open to full-time roles</span>
   </div>
 </footer>
-<script src="js/main.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>
