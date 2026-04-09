@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gamification and AI - Blake Warner</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Blake<span>.</span>Warner</a>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="making.html">Making</a>
+      <a href="contact.html" class="nav-cta">Get in touch</a>
+    </div>
+  </div>
+</nav>
+<main class="page">
+  <div class="case-hero">
+    <a href="work.html" class="case-back">Back to work</a>
+    <h1>Gamification and <em>AI</em> Daily Motivation</h1>
+    <p class="case-sub">Exploring how AI-powered game mechanics can make daily habit-building feel rewarding rather than punishing.</p>
+  </div>
+  <div class="case-meta">
+    <div><div class="cm-label">My Role</div><div class="cm-val">UX Researcher and Designer</div></div>
+    <div><div class="cm-label">Timeline</div><div class="cm-val">8 weeks</div></div>
+    <div><div class="cm-label">Tools</div><div class="cm-val">Figma, FigJam, Notion</div></div>
+    <div><div class="cm-label">Type</div><div class="cm-val">Concept Case Study</div></div>
+  </div>
+  <div style="max-width:100%;overflow:hidden;background:var(--bg2);border-bottom:1px solid var(--line)">
+    <div class="thumb" style="height:320px">
+      <img src="https://cdn.myportfolio.com/f7f1b0b7-fc0d-438a-83d2-fbc4a115d478/b746e9d0-93e8-484f-8886-b707d501b00f_rwc_189x0x945x709x32.png" alt="Gamification case study" loading="lazy" onerror="this.style.display='none'">
+      <div class="thumb-fallback" style="background:linear-gradient(135deg,#2a1e0a,#1a1205)"><div class="thumb-icon-wrap">&#x1F3AE;</div></div>
+    </div>
+  </div>
+  <div class="case-body reveal">
+    <h2>The Problem</h2>
+    <p>Most habit apps fail users within two weeks. They are either too rigid - miss a day and your streak resets - or too passive, with no loop to keep you coming back. The core question driving this project: what if a habit app knew when to push you and when to give you a break?</p>
+
+    <h2>Research and Discovery</h2>
+    <p>I analyzed 8 habit and productivity apps including Habitica, Duolingo, Finch, Fabulous, Streaks, Bereal, Forest, and Todoist. I also ran 5 user interviews with people who had tried and abandoned habit apps.</p>
+    <ul>
+      <li>Users wanted the app to understand them. Generic reminders felt hollow and were quickly turned off.</li>
+      <li>Gamification works when rewards feel earned, not automatic. Points for just opening the app felt meaningless.</li>
+      <li>The most motivating features were social: leaderboards, shared streaks, and accountability partners.</li>
+      <li>AI felt exciting but threatening if it felt like surveillance. Transparency about AI reasoning was the biggest trust lever.</li>
+    </ul>
+
+    <h2>Design Approach</h2>
+    <p>I designed around three core mechanics: an adaptive AI coach that adjusts tone and challenge level based on recent behavior; a quest-based task system that frames habits as an ongoing story rather than a checkbox list; and a flexible streak recovery system that rewards consistency over perfection.</p>
+
+    <h2>Key Design Decisions</h2>
+    <ul>
+      <li>Adaptive Coach: AI messages shift from encouraging to challenging based on streak data, not a fixed daily prompt sent to every user.</li>
+      <li>Recovery Quest: Missing a day triggers a special challenge that, if completed, restores the streak. This rewards consistency over perfection.</li>
+      <li>A character avatar that levels up visually with long-term progress, giving a persistent reward for sustained effort.</li>
+      <li>All AI suggestions are opt-in and show the reasoning behind each recommendation so users understand why.</li>
+    </ul>
+
+    <h2>Results</h2>
+    <div class="case-callout">
+      <h4>Concept validation outcomes</h4>
+      <ul>
+        <li>All 3 prototype participants preferred the recovery quest mechanic over streak resets, calling it fair and more human.</li>
+        <li>The adaptive coach scored higher on trust ratings when tone rationale was visible to the user.</li>
+        <li>The quest framing was the most novel feature and the one most likely to keep participants engaged past 2 weeks.</li>
+      </ul>
+    </div>
+
+    <h2>Key Learnings</h2>
+    <div class="case-learning">
+      <h4>What this project taught me</h4>
+      <ul>
+        <li>Gamification done poorly feels manipulative. Done well, it makes the user feel capable. The difference is whether the mechanics respect the user's autonomy - I learned to design rewards that feel earned, not manufactured.</li>
+        <li>AI in UX is a positioning problem as much as a design problem. Users do not reject AI features - they reject AI that feels opaque. Transparency about why the AI is making a recommendation was the single biggest trust lever I found.</li>
+        <li>I had a critical assumption wrong going in. I designed the recovery quest to be hard, assuming users wanted a challenge after failing. Most participants wanted it easy - they had already failed and needed a win, not another obstacle.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="case-nav">
+    <div class="case-nav-link">
+      <span class="case-nav-label">Previous</span>
+      <a href="case-onboarding.html" class="case-nav-title">SaaS Onboarding Redesign</a>
+    </div>
+    <div class="case-nav-link" style="text-align:right">
+      <span class="case-nav-label">Next</span>
+      <a href="case-mercari.html" class="case-nav-title">Mercari Usability Evaluation</a>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Blake<span>.</span>Warner</span>
+    <div class="footer-links">
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="making.html">Making</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span class="footer-copy">2026 - Open to full-time roles</span>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
