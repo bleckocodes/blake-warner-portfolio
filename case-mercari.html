@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gamification &amp; AI Daily Motivation &mdash; Blake Warner</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercari Usability Evaluation - Blake Warner</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -21,50 +22,62 @@
 <main class="page">
   <div class="case-hero">
     <a href="work.html" class="case-back">Back to work</a>
-    <h1>Gamification &amp; AI Daily Motivation</h1>
-    <p class="case-sub">Exploring how AI-powered game mechanics can make daily habit-building feel rewarding rather than punishing.</p>
+    <h1>Mercari Usability <em>Evaluation</em></h1>
+    <p class="case-sub">Heuristic and user-based evaluation of Mercari's mobile marketplace, surfacing 14 issues including a severity-4 critical bug.</p>
   </div>
-  <div class="case-meta"><div><div class="cm-label">My Role</div><div class="cm-val">UX Researcher &amp; Designer</div></div><div><div class="cm-label">Timeline</div><div class="cm-val">8 weeks</div></div><div><div class="cm-label">Tools</div><div class="cm-val">Figma, FigJam, Notion</div></div><div><div class="cm-label">Type</div><div class="cm-val">Concept Case Study</div></div></div>
+  <div class="case-meta">
+    <div><div class="cm-label">My Role</div><div class="cm-val">UX Researcher and Evaluator</div></div>
+    <div><div class="cm-label">Timeline</div><div class="cm-val">4 weeks</div></div>
+    <div><div class="cm-label">Tools</div><div class="cm-val">Figma, Notion, Zoom</div></div>
+    <div><div class="cm-label">Method</div><div class="cm-val">Heuristic eval + usability testing</div></div>
+  </div>
   <div style="max-width:100%;overflow:hidden;background:var(--bg2);border-bottom:1px solid var(--line)">
     <div class="thumb" style="height:320px">
-  <img src="https://cdn.myportfolio.com/f7f1b0b7-fc0d-438a-83d2-fbc4a115d478/b746e9d0-93e8-484f-8886-b707d501b00f_rwc_189x0x945x709x32.png" alt="" loading="lazy" onerror="this.style.display='none'">
-  <div class="thumb-fallback" style="background:linear-gradient(135deg,#2a1e0a,#1a1205)">
-    <div class="thumb-icon-wrap">🎮</div>
-  </div>
-</div>
+      <img src="https://cdn.myportfolio.com/f7f1b0b7-fc0d-438a-83d2-fbc4a115d478/056ade46-d590-47a6-898f-ae941006f7a3_rwc_0x0x1438x1078x32.png" alt="Mercari usability evaluation" loading="lazy" onerror="this.style.display='none'">
+      <div class="thumb-fallback" style="background:linear-gradient(135deg,#1e1a2e,#12101c)"><div class="thumb-icon-wrap">&#x1F50D;</div></div>
+    </div>
   </div>
   <div class="case-body reveal">
-
     <h2>The Problem</h2>
-    <p>Most habit apps fail users within two weeks. They're either too rigid &mdash; miss a day and your streak resets &mdash; or too passive, with no loop to keep you coming back. The core question: what if a habit app knew when to push you and when to give you a break?</p>
+    <p>For a marketplace at Mercari's scale, even small usability friction in core flows - listing, searching, and checkout - translates into significant drop-off at scale. I ran a structured evaluation using both expert heuristic analysis and task-based usability testing to surface the highest-priority issues.</p>
 
-    <h2>Research &amp; Discovery</h2>
-    <p>I analyzed 8 habit apps including Habitica, Duolingo, Finch, Fabulous, Streaks, Bereal, Forest, and Todoist, and ran 5 user interviews with people who had tried and abandoned habit apps.</p>
+    <h2>Evaluation Goals</h2>
     <ul>
-      <li>Users wanted the app to understand them. Generic reminders felt hollow and were quickly disabled.</li>
-      <li>Gamification works when rewards feel earned, not automatic. Points for just opening the app felt meaningless.</li>
-      <li>The most motivating features were social: leaderboards, shared streaks, accountability partners.</li>
-      <li>AI felt exciting but threatening if it felt like surveillance. Transparency about AI reasoning was the biggest trust lever.</li>
+      <li>How easily can a first-time seller list an item from start to publish?</li>
+      <li>How efficiently can a buyer search, filter, and evaluate a specific item?</li>
+      <li>Where does the checkout and payment flow create confusion or hesitation?</li>
     </ul>
 
-    <h2>Design Approach</h2>
-    <p>I designed around three core mechanics: an adaptive AI coach that adjusts tone and challenge based on recent behavior; a quest-based task system that frames habits as an ongoing story rather than a checkbox list; and a flexible streak recovery system that rewards consistency over perfection.</p>
+    <h2>Method</h2>
+    <h3>Heuristic Evaluation</h3>
+    <p>I evaluated Mercari's mobile app against Nielsen's 10 Usability Heuristics, walking through the three primary flows and documenting violations with severity ratings on a 0 to 4 scale.</p>
+    <h3>Usability Testing</h3>
+    <p>I recruited 5 participants with varying e-commerce experience and conducted moderated think-aloud sessions over Zoom. Each participant completed 3 tasks: listing a used item for sale, finding and saving a specific product, and completing a simulated purchase.</p>
 
-    <h2>Key Design Decisions</h2>
+    <h2>Key Findings</h2>
     <ul>
-      <li>Adaptive Coach: AI messages shift from encouraging to challenging based on streak data, not a fixed daily prompt.</li>
-      <li>Recovery Quest: Missing a day triggers a special challenge that, if completed, restores the streak. Rewards consistency over perfection.</li>
-      <li>A character avatar that levels up visually with long-term progress &mdash; persistent reward for sustained effort.</li>
-      <li>All AI suggestions are opt-in and show the reasoning behind each recommendation.</li>
+      <li>Severity 4 - Listing flow: After 6 photos are uploaded, the app gives no indication the limit has been reached. Users kept tapping Add Photo with no feedback, assuming photos had failed to upload.</li>
+      <li>Severity 3 - Search filters: Applying multiple filters requires navigating to a separate screen. Users cannot preview result counts while filtering, making it impossible to evaluate choices before committing.</li>
+      <li>Severity 3 - Checkout: The Make Offer and Buy Now buttons are nearly identical in visual weight. 3 of 5 test participants accidentally initiated an offer when they intended to purchase directly.</li>
+      <li>Severity 2 - Condition labels: Terms like Good and Like New are undefined. Users in testing had inconsistent interpretations and expressed uncertainty about what they were actually buying.</li>
+    </ul>
+
+    <h2>Recommendations</h2>
+    <ul>
+      <li>Add a photo count indicator on the listing screen showing X of 6 photos added, updating in real time as photos are uploaded.</li>
+      <li>Implement inline filter previews that update result counts as filters are toggled, without requiring page navigation.</li>
+      <li>Visually differentiate Make Offer and Buy Now - make Buy Now the primary CTA and reduce the visual weight of Make Offer to a secondary action.</li>
+      <li>Add a standardized condition guide accessible via tooltip on item condition labels throughout the app.</li>
     </ul>
 
     <h2>Results</h2>
     <div class="case-callout">
-      <h4>Concept validation</h4>
+      <h4>Evaluation outcomes</h4>
       <ul>
-        <li>All 3 prototype participants preferred the recovery quest over streak resets, calling it fair and more human.</li>
-        <li>The adaptive coach scored higher on trust when tone rationale was visible to the user.</li>
-        <li>Quest framing was the most novel feature &mdash; the one most likely to keep participants engaged past 2 weeks.</li>
+        <li>14 usability issues documented across 3 core flows with severity ratings and annotated screenshots.</li>
+        <li>5 of 5 usability test participants encountered the photo limit bug, confirming the severity-4 rating.</li>
+        <li>3 of 5 participants clicked the wrong action button during checkout (Make Offer vs. Buy Now).</li>
+        <li>Final deliverable: A prioritized recommendations report with annotated Figma mockups for 4 proposed fixes.</li>
       </ul>
     </div>
 
@@ -72,21 +85,20 @@
     <div class="case-learning">
       <h4>What this project taught me</h4>
       <ul>
-        <li>Gamification done poorly feels manipulative. Done well, it makes the user feel capable. The difference is whether mechanics respect user autonomy.</li>
-        <li>AI in UX is a positioning problem as much as a design problem. Transparency about why the AI is making a suggestion was the single biggest trust lever I found.</li>
-        <li>I had a critical assumption wrong. I designed the recovery quest to be hard. Most participants wanted it easy &mdash; they'd already failed and needed a win, not another obstacle.</li>
+        <li>Heuristic evaluation is a starting point, not a conclusion. My severity-4 finding was something I caught in the expert review phase - but until 5 users hit the same wall in testing, I could not know how universal the problem was. Both methods are necessary, and they reinforce each other.</li>
+        <li>Visual hierarchy in CTAs is deceptively hard to get right. Two buttons of equal weight placed next to each other will get tapped in random order. I now pay close attention to CTA hierarchy and visual weight in every project I work on.</li>
+        <li>Recruiting novice users is essential. My most useful test participant had never used Mercari before. Their confusion was the most diagnostic. Experienced users develop workarounds and stop noticing the problems that matter most.</li>
       </ul>
     </div>
-
   </div>
   <div class="case-nav">
     <div class="case-nav-link">
-      <span class="case-nav-label">&larr; Previous</span>
-      <a href="case-onboarding.html" class="case-nav-title">SaaS Onboarding</a>
+      <span class="case-nav-label">Previous</span>
+      <a href="case-gamification.html" class="case-nav-title">Gamification and AI</a>
     </div>
     <div class="case-nav-link" style="text-align:right">
-      <span class="case-nav-label">Next &rarr;</span>
-      <a href="case-mercari.html" class="case-nav-title">Mercari Usability</a>
+      <span class="case-nav-label">Next</span>
+      <a href="case-prayr.html" class="case-nav-title">Prayr App Research</a>
     </div>
   </div>
 </main>
@@ -99,7 +111,7 @@
       <a href="making.html">Making</a>
       <a href="contact.html">Contact</a>
     </div>
-    <span class="footer-copy">&copy; 2026 &middot; Open to full-time roles</span>
+    <span class="footer-copy">2026 - Open to full-time roles</span>
   </div>
 </footer>
 <script src="js/main.js"></script>
