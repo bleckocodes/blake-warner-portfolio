@@ -1,25 +1,124 @@
-// Nav scroll
-const nav = document.querySelector('.nav');
-if (nav) window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 20), {passive:true});
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prayr App UX Research - Blake Warner</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Blake<span>.</span>Warner</a>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="making.html">Making</a>
+      <a href="contact.html" class="nav-cta">Get in touch</a>
+    </div>
+  </div>
+</nav>
+<main class="page">
+  <div class="case-hero">
+    <a href="work.html" class="case-back">Back to work</a>
+    <h1>Prayr App <em>UX Research</em></h1>
+    <p class="case-sub">Mixed-methods research for a faith-based mobile app, uncovering emotional and functional needs the product was not meeting.</p>
+  </div>
+  <div class="case-meta">
+    <div><div class="cm-label">My Role</div><div class="cm-val">UX Researcher (solo)</div></div>
+    <div><div class="cm-label">Timeline</div><div class="cm-val">5 weeks</div></div>
+    <div><div class="cm-label">Tools</div><div class="cm-val">Zoom, FigJam, Notion</div></div>
+    <div><div class="cm-label">Methods</div><div class="cm-val">Interviews, affinity map, personas</div></div>
+  </div>
+  <div style="max-width:100%;overflow:hidden;background:var(--bg2);border-bottom:1px solid var(--line)">
+    <div class="thumb" style="height:320px">
+      <img src="https://cdn.myportfolio.com/f7f1b0b7-fc0d-438a-83d2-fbc4a115d478/f16dbaf9-6f36-424c-9cd9-266f22ea0928_carw_4x3x32.png" alt="Prayr app research" loading="lazy" onerror="this.style.display='none'">
+      <div class="thumb-fallback" style="background:linear-gradient(135deg,#2e1a1a,#1c1010)"><div class="thumb-icon-wrap">&#x1F64F;</div></div>
+    </div>
+  </div>
+  <div class="case-body reveal">
+    <h2>Project Overview</h2>
+    <p>This was a focused UX research study for a faith-based mobile app. My goal was not to redesign the app but to deeply understand user mental models, needs, and pain points - and deliver research findings that could directly inform the next design iteration.</p>
 
-// Mobile nav
-const tog = document.querySelector('.nav-toggle');
-const nl  = document.querySelector('.nav-links');
-if (tog && nl) {
-  tog.addEventListener('click', () => { tog.classList.toggle('open'); nl.classList.toggle('open'); });
-  nl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { tog.classList.remove('open'); nl.classList.remove('open'); }));
-}
+    <h2>Research Questions</h2>
+    <ul>
+      <li>How do people currently manage and track their prayer practices, and what tools do they use?</li>
+      <li>What emotional and functional needs go unmet by existing tools?</li>
+      <li>Where does the app create friction, and what features resonate most with users?</li>
+    </ul>
 
-// Active link
-const cur = location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.nav-links a').forEach(a => {
-  const h = a.getAttribute('href') || '';
-  if (h === cur || h.endsWith(cur) || (cur === '' && h.includes('index'))) a.classList.add('active');
-});
+    <h2>Method</h2>
+    <h3>Participants</h3>
+    <p>I recruited 6 participants with active personal prayer practices who had used at least one digital tool for spiritual reflection. Ages ranged from 22 to 58, representing three Christian denominations.</p>
+    <h3>Interviews</h3>
+    <p>45-minute semi-structured interviews over Zoom. I focused on habits before introducing any questions about the app - I wanted to understand users' mental models before priming them with the product's features.</p>
+    <h3>Synthesis</h3>
+    <p>I transcribed and coded all 6 interviews, then clustered insights into an affinity diagram in FigJam. I identified 5 major themes and developed 2 primary user personas.</p>
 
-// Scroll reveal
-const els = document.querySelectorAll('.reveal');
-if (els.length) {
-  const io = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }), {threshold:.1, rootMargin:'0px 0px -30px 0px'});
-  els.forEach(el => io.observe(el));
-}
+    <h2>Key Findings</h2>
+    <ul>
+      <li>Prayer is deeply personal. Users were wary of anything that felt performative. The group prayer feature made several participants uncomfortable because it implied others could see how often they prayed.</li>
+      <li>Physical journals were the primary competitor. 4 of 6 participants kept a physical journal alongside or instead of any digital tool. The non-screentime experience was part of the spiritual value.</li>
+      <li>Answered prayer tracking was the most valued and least developed feature. Users wanted to look back and see how prayers had been answered over time, but the app made this hard to access.</li>
+      <li>Reminders were polarizing. Some loved daily prompts; others had turned them off immediately. A flexible, non-streak-based gentle mode was consistently requested.</li>
+      <li>Simple is sacred. Users trusted the app more when it felt calm and uncluttered. Complexity felt at odds with the contemplative nature of prayer.</li>
+    </ul>
+
+    <h2>Design Recommendations</h2>
+    <ul>
+      <li>Private-by-default mode for all prayer entries. Sharing should require explicit opt-in, not opt-out.</li>
+      <li>Elevate Answered Prayer in navigation - front-and-center, not buried in settings.</li>
+      <li>Flexible user-controlled reminders with a gentle mode that nudges without streaks or pressure.</li>
+      <li>Simplified home screen showing only recent prayers and a single clear call to action.</li>
+      <li>Add a private reflection journal feature so users who rely on journaling do not need to switch apps.</li>
+      <li>Revise group sharing UI language to make privacy expectations explicit at the point of entry.</li>
+    </ul>
+
+    <h2>Results</h2>
+    <div class="case-callout">
+      <h4>Research outcomes</h4>
+      <ul>
+        <li>Delivered 6 prioritized design recommendations backed by direct user evidence from all 6 interviews.</li>
+        <li>2 primary personas developed capturing the core tension between community-focused and privacy-focused users.</li>
+        <li>Affinity diagram with 5 major themes spanning emotional needs, feature gaps, and trust factors.</li>
+        <li>Research findings presented to stakeholders with direct quotes and supporting evidence for each recommendation.</li>
+      </ul>
+    </div>
+
+    <h2>Key Learnings</h2>
+    <div class="case-learning">
+      <h4>What this project taught me</h4>
+      <ul>
+        <li>Research on sensitive topics requires careful interview framing. My first two questions were too direct and produced surface-level answers. Restructuring to ask about habits before attitudes dramatically improved the depth of insight I was able to gather.</li>
+        <li>The most important insight came from something not in the app at all - physical journals. Understanding why users preferred an analog tool helped me identify what the digital experience was failing to provide emotionally, not just functionally.</li>
+        <li>Personas built from real tension are more useful than averages. My two personas had genuinely conflicting needs. Holding both in mind throughout the recommendations process made the output stronger and more honest about the real trade-offs involved.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="case-nav">
+    <div class="case-nav-link">
+      <span class="case-nav-label">Previous</span>
+      <a href="case-mercari.html" class="case-nav-title">Mercari Usability Evaluation</a>
+    </div>
+    <div class="case-nav-link" style="text-align:right">
+      <span class="case-nav-label">Next</span>
+      <a href="case-vr.html" class="case-nav-title">VR Skill Labs Discovery</a>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Blake<span>.</span>Warner</span>
+    <div class="footer-links">
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="making.html">Making</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span class="footer-copy">2026 - Open to full-time roles</span>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
