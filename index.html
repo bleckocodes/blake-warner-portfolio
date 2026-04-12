@@ -13,6 +13,473 @@
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="css/style.css">
   <style>
+    /* ── Canvas + cursor orb ── */
+    #hero-canvas { position:fixed; top:0; left:0; width:100vw; height:100vh; pointer-events:none; z-index:0; opacity:1; }
+    .cursor-orb { position:fixed; width:400px; height:400px; border-radius:50%; background:radial-gradient(circle,rgba(201,104,32,.07) 0%,transparent 70%); pointer-events:none; z-index:0; transform:translate(-50%,-50%); transition:left .12s ease,top .12s ease; }
+    .hero { position:relative; overflow:hidden; }
+    .hero > * { position:relative; z-index:1; }
+
+    /* ── Hero rework ── */
+    .hero-available { display:inline-flex; align-items:center; gap:.5rem; font-size:.72rem; font-weight:500; letter-spacing:.06em; color:#5ab880; background:rgba(90,184,128,.1); border:1px solid rgba(90,184,128,.2); border-radius:100px; padding:.3rem .9rem; margin-bottom:1.25rem; }
+    .hero-available::before { content:''; width:6px; height:6px; border-radius:50%; background:#5ab880; animation:pulse 2s ease-in-out infinite; }
+    .hero-headline { overflow:hidden; }
+    .headline-word { display:inline-block; opacity:0; transform:translateY(100%); transition:opacity .6s ease, transform .6s ease; }
+    .headline-word.visible { opacity:1; transform:translateY(0); }
+
+    /* ── Stats count-up ── */
+    .stat-n { font-family:var(--serif); font-size:1.75rem; font-weight:600; color:var(--orange); line-height:1; margin-bottom:.15rem; }
+
+    /* ── Skills strip ── */
+    .skills-strip { background:var(--bg2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:1rem var(--pad); overflow:hidden; position:relative; }
+    .skills-track { display:flex; gap:1rem; animation:scroll-left 30s linear infinite; width:max-content; }
+    .skills-track:hover { animation-play-state:paused; }
+    @keyframes scroll-left { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+    .strip-skill { font-size:.75rem; color:var(--txt2); padding:.3rem .9rem; border:1px solid var(--line2); border-radius:100px; white-space:nowrap; transition:border-color .2s,color .2s; flex-shrink:0; }
+    .strip-skill:hover { border-color:var(--orange); color:var(--orange); }
+
+    /* ── Featured work grid ── */
+    .featured-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:3rem; }
+    @media(max-width:860px) { .featured-grid { grid-template-columns:1fr 1fr; } }
+    @media(max-width:560px) { .featured-grid { grid-template-columns:1fr; } }
+    .featured-grid .thumb { height:200px !important; }
+    
+
+    /* ── Making section ── */
+    .making-strip { background:var(--bg2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .making-strip-inner { max-width:var(--max); margin:0 auto; padding:4rem var(--pad); display:grid; grid-template-columns:1fr 1.4fr; gap:4rem; align-items:center; }
+    .making-imgs { display:grid; grid-template-columns:1fr 1fr; gap:.875rem; }
+    .making-img-item { border-radius:var(--r-lg); overflow:hidden; border:1px solid var(--line); aspect-ratio:1; }
+    .making-img-item img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+    .making-img-item:hover img { transform:scale(1.06); }
+    @media(max-width:760px) { .making-strip-inner { grid-template-columns:1fr; } }
+
+    /* ── Process steps ── */
+    .process-row { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:2.5rem; }
+    .process-item { padding:1.5rem 1rem; background:var(--bg2); border:1px solid var(--line); border-radius:var(--r-lg); text-align:center; transition:border-color .25s,transform .25s; }
+    .process-item:hover { border-color:var(--orange); transform:translateY(-3px); }
+    .process-num { font-family:var(--serif); font-size:1.6rem; font-weight:600; color:var(--orange); display:block; margin-bottom:.4rem; }
+    .process-label { font-size:.78rem; color:var(--txt2); line-height:1.5; }
+    @media(max-width:640px) { .process-row { grid-template-columns:repeat(2,1fr); } }
+
+    /* ── Hero profile ── */
+    .hero-profile { display:flex; align-items:center; gap:.875rem; margin-bottom:1.5rem; }
+    .hero-avatar { width:48px; height:48px; border-radius:50%; object-fit:cover; border:2px solid var(--orange); flex-shrink:0; }
+    .hero-name-block .hero-name { font-size:.85rem; font-weight:500; color:var(--txt); }
+    .hero-name-block .hero-loc { font-size:.75rem; color:var(--txt3); }
+
+    /* ── Entrance animations ── */
+    .anim-in { opacity:0; transform:translateY(20px); }
+    .anim-in.done { opacity:1; transform:none; transition:opacity .7s ease, transform .7s ease; }
+
+    /* ── Glitch on hover ── */
+    .glitch-target { position:relative; display:inline-block; }
+    .glitch-target::before,.glitch-target::after { content:attr(data-text); position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; }
+    
+    
+    
+    
+  
+    /* ── Solid bg on all sections below hero — canvas only shows through hero ── */
+    .skills-strip,
+    .section,
+    .making-strip,
+    .teaser,
+    .footer {
+      position: relative;
+      z-index: 1;
+      background-color: var(--bg);
+    }
+    .skills-strip,
+    .making-strip {
+      background-color: var(--bg2);
+    }
+    .teaser {
+      background-color: var(--bg2);
+    }
+</style>
+</head>
+<body>
+<div class="cursor-orb" id="cursor-orb"></div>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Blake<span>.</span>Warner</a>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="making.html">Making</a>
+      <a href="contact.html" class="nav-cta">Get in touch</a>
+    </div>
+  </div>
+</nav>
+<main class="page">
+
+  <!-- Hero -->
+  <section class="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-profile anim-in">
+        <img src="ProfilePictureProject2.png" alt="Blake Warner" class="hero-avatar">
+        <div class="hero-name-block">
+          <div class="hero-name">Blake Warner</div>
+          <div class="hero-loc">Pacific Northwest · Open to remote</div>
+        </div>
+      </div>
+      <div class="hero-available anim-in">Open to full-time roles</div>
+      <p class="hero-eyebrow anim-in">UX Designer</p>
+      <h1 class="hero-headline anim-in">
+        <span class="glitch-target" data-text="I design the parts of software">I design the parts of software</span><br>
+        people never have to <em>think about</em>
+      </h1>
+      <p class="hero-sub anim-in">Two years shipping real SaaS products. Design-led, detail-oriented, AI empowered.</p>
+      <div class="hero-actions anim-in">
+        <a href="work.html" class="btn btn-primary">View my work</a>
+        <a href="contact.html" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-cards">
+      <div class="stat-row">
+        <div class="stat anim-in"><div class="stat-n" data-count="2" data-suffix="+">2+</div><div class="stat-l">Years professional experience</div></div>
+        <div class="stat anim-in"><div class="stat-n" data-count="6" data-suffix="+">6+</div><div class="stat-l">SaaS products shipped</div></div>
+      </div>
+      <div class="hcard anim-in">
+        <div class="hcard-label">Current focus</div>
+        <div class="hcard-val"><strong>SaaS + mobile UI</strong> — design systems, feature flows, AI-augmented prototyping</div>
+      </div>
+      <div class="hcard anim-in">
+        <div class="hcard-label">Education</div>
+        <div class="hcard-val">B.A. UX Design · Northwest University · <strong>Summa Cum Laude</strong></div>
+      </div>
+      <div class="hcard anim-in">
+        <div class="hcard-label">Status</div>
+        <div class="hcard-val" style="display:flex;align-items:center;gap:.5rem;"><span style="width:7px;height:7px;border-radius:50%;background:#5ab880;animation:pulse 2s ease-in-out infinite;flex-shrink:0;"></span><strong>Open</strong> to full-time UX roles</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scrolling skills strip -->
+  <div class="skills-strip">
+    <div class="skills-track">
+      <span class="strip-skill">UI Design</span><span class="strip-skill">Interaction Design</span><span class="strip-skill">Design Systems</span><span class="strip-skill">Figma (Advanced)</span><span class="strip-skill">Prototyping</span><span class="strip-skill">Responsive Web</span><span class="strip-skill">Mobile</span><span class="strip-skill">Light / Dark Mode</span><span class="strip-skill">User Flows</span><span class="strip-skill">Component Libraries</span><span class="strip-skill">Claude / AI Prompting</span><span class="strip-skill">Cursor</span><span class="strip-skill">Blender 3D</span><span class="strip-skill">Information Architecture</span><span class="strip-skill">UI Design</span><span class="strip-skill">Interaction Design</span><span class="strip-skill">Design Systems</span><span class="strip-skill">Figma (Advanced)</span><span class="strip-skill">Prototyping</span><span class="strip-skill">Responsive Web</span><span class="strip-skill">Mobile</span><span class="strip-skill">Light / Dark Mode</span><span class="strip-skill">User Flows</span><span class="strip-skill">Component Libraries</span><span class="strip-skill">Claude / AI Prompting</span><span class="strip-skill">Cursor</span><span class="strip-skill">Blender 3D</span><span class="strip-skill">Information Architecture</span>
+    </div>
+  </div>
+
+  <!-- Selected work -->
+  <div style="background:var(--bg);position:relative;z-index:1;">
+  <section class="section">
+    <p class="s-tag reveal">Selected work</p>
+    <h2 class="s-title reveal d1">Case studies and <em>projects</em></h2>
+    <p class="s-intro reveal d2">End-to-end design across real products — shipped interfaces, design systems, and prototypes used in production.</p>
+    <div class="featured-grid">
+      <a href="case-onboarding.html" class="card reveal">
+        <div class="thumb"><img src="webp-Portfolio-images/budget-consulting-ux-case-study_compressed.webp" alt="SaaS Onboarding Redesign" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Case Study · Capstone</span>
+          <h3 class="card-title">SaaS Onboarding Redesign</h3>
+          <p class="card-desc">Cut time-to-first-action from 8+ minutes to under 3.5 minutes. Prototype used in investor presentations.</p>
+        </div>
+        <div class="card-footer"><span class="card-year">2024 · Heroic Development</span><div class="card-arrow">→</div></div>
+      </a>
+      <a href="professional.html" class="card reveal d1">
+          <div class="thumb"><img src="webp-Portfolio-images/ux-case-study-dark-theme_compressed.webp" alt="Professional industry work" loading="lazy"></div>
+          <div class="card-body">
+            <span class="card-tag">Industry · 2 Years</span>
+            <h3 class="card-title">Heroic Dev &amp; Supergreen</h3>
+            <p class="card-desc">Two years of SaaS design — systems, flows, responsive web and mobile across six products.</p>
+          </div>
+          <div class="card-footer"><span class="card-year">2023–2026</span><div class="card-arrow">→</div></div>
+      </a>
+      <a href="case-gamification.html" class="card reveal d2">
+          <div class="thumb"><img src="webp-Portfolio-images/life-lyrics-app-case-study_compressed.webp" alt="Life Lyrics App" loading="lazy"></div>
+          <div class="card-body">
+            <span class="card-tag">App Design · Concept</span>
+            <h3 class="card-title">Life Lyrics App</h3>
+            <p class="card-desc">Full visual design system — 3 phases, style guide, high-fidelity prototype.</p>
+          </div>
+          <div class="card-footer"><span class="card-year">2023 · Academic</span><div class="card-arrow">→</div></div>
+      </a>
+      <a href="case-mercari.html" class="card reveal d1">
+          <div class="thumb"><img src="webp-Portfolio-images/notables-app-case-study_compressed.webp" alt="Mercari Usability" loading="lazy"></div>
+          <div class="card-body">
+            <span class="card-tag">Usability Study</span>
+            <h3 class="card-title">Mercari Evaluation</h3>
+            <p class="card-desc">14 issues. One severity-4 critical bug with 100% task failure rate.</p>
+          </div>
+          <div class="card-footer"><span class="card-year">2023 · Academic</span><div class="card-arrow">→</div></div>
+      </a>
+      <a href="case-prayr.html" class="card reveal d2">
+          <div class="thumb"><img src="webp-Portfolio-images/prayr-app-ux-research-cover_compressed.webp" alt="Prayr App" loading="lazy"></div>
+          <div class="card-body">
+            <span class="card-tag">UX Study</span>
+            <h3 class="card-title">Prayr App Research</h3>
+            <p class="card-desc">Mixed-methods study. 6 design recommendations delivered.</p>
+          </div>
+          <div class="card-footer"><span class="card-year">2023 · Academic</span><div class="card-arrow">→</div></div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:2rem;">
+      <a href="work.html" class="btn btn-ghost reveal">View all work →</a>
+    </div>
+  </section>
+
+  </div>
+  <!-- How I work -->
+  <div class="skills-strip" style="padding:3rem var(--pad);">
+    <div style="max-width:var(--max);margin:0 auto;">
+      <p class="s-tag reveal">Process</p>
+      <h2 class="s-title reveal d1" style="font-size:clamp(1.4rem,2.2vw,2rem);margin-bottom:0;">How I <em>work</em></h2>
+      <div class="process-row">
+        <div class="process-item reveal"><span class="process-num">01</span><div class="process-label">Map the problem space before opening any design tool</div></div>
+        <div class="process-item reveal d1"><span class="process-num">02</span><div class="process-label">Design flows, IA, user journeys, and edge cases</div></div>
+        <div class="process-item reveal d2"><span class="process-num">03</span><div class="process-label">Build high-fidelity UI with component-level precision</div></div>
+        <div class="process-item reveal d3"><span class="process-num">04</span><div class="process-label">Collaborate with devs to ship the design intact</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Making -->
+  <div class="making-strip">
+    <div class="making-strip-inner">
+      <div>
+        <p class="s-tag reveal">Beyond the screen</p>
+        <h2 class="s-title reveal d1" style="font-size:clamp(1.6rem,2.5vw,2.2rem);">I build things in <em>the real world too</em></h2>
+        <p style="font-size:.9625rem;color:var(--txt2);line-height:1.8;margin:1rem 0 1.75rem;" class="reveal d2">Mandalorian armor modeled in Blender and worn at ECCC 2025. Screen-accurate blasters. A Rodian prosthetic that placed at the Boeing Museum cosplay contest. Stickers cut on a Silhouette Cameo. The same precision that goes into a component library goes into a painted miniature.</p>
+        <a href="making.html" class="btn btn-ghost reveal d3">See what I make →</a>
+      </div>
+      <div class="making-imgs reveal d2">
+        <div class="making-img-item"><img src="webp-Portfolio-images/cosplay-armor-city-street-portrait_compressed.webp" alt="Mandalorian armor"></div>
+        <div class="making-img-item"><img src="webp-Portfolio-images/greedo-alien-costume-outdoors_compressed.webp" alt="Rodian cosplay"></div>
+        <div class="making-img-item"><img src="webp-Portfolio-images/mandalorian-helmet-sticker-illustration_compressed.webp" alt="Sticker design"></div>
+        <div class="making-img-item"><img src="webp-Portfolio-images/cosplay-jetpack-seattle-street_compressed.webp" alt="Jetpack prop"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="teaser">
+    <div class="teaser-inner">
+      <p><strong>Open to full-time UX roles</strong> — SaaS, mobile, or anything with a hard problem worth solving. Pacific Northwest, open to remote.</p>
+      <a href="contact.html" class="btn btn-primary">Get in touch →</a>
+    </div>
+  </div>
+
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Blake<span>.</span>Warner</span>
+    <div class="footer-links">
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="making.html">Making</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span class="footer-copy">2026 - Open to full-time roles</span>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+<script>
+/* ── Cursor orb ── */
+const orb = document.getElementById('cursor-orb');
+document.addEventListener('mousemove', e => {
+  orb.style.left = e.clientX + 'px';
+  orb.style.top = e.clientY + 'px';
+});
+
+/* ── Canvas particle network — full viewport ── */
+(function() {
+  const canvas = document.getElementById('hero-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [], mouse = { x: -9999, y: -9999 };
+  const ORANGE = 'rgba(201,104,32,';
+  const COUNT = 110;
+  const MAX_DIST = 150;
+  const MOUSE_DIST = 180;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+    // Re-scatter particles on resize
+    particles.forEach(p => p.scatter());
+  }
+
+  function Particle() { this.scatter(); }
+
+  Particle.prototype.scatter = function() {
+    // Spawn anywhere on screen with slow random drift in any direction
+    this.x = Math.random() * W;
+    this.y = Math.random() * H;
+    const angle = Math.random() * Math.PI * 2;
+    const speed = Math.random() * 0.35 + 0.08;
+    this.vx = Math.cos(angle) * speed;
+    this.vy = Math.sin(angle) * speed;
+    this.size = Math.random() * 1.8 + 0.6;
+    this.alpha = Math.random() * 0.5 + 0.15;
+    this.life = Math.random() * 400; // stagger start times
+    this.maxLife = Math.random() * 500 + 300;
+    this.baseVx = this.vx;
+    this.baseVy = this.vy;
+  };
+
+  Particle.prototype.update = function() {
+    // Mouse repulsion
+    const dx = this.x - mouse.x;
+    const dy = this.y - mouse.y;
+    const d = Math.sqrt(dx * dx + dy * dy);
+    if (d < MOUSE_DIST && d > 0) {
+      const force = (MOUSE_DIST - d) / MOUSE_DIST;
+      this.vx = this.baseVx + (dx / d) * force * 2;
+      this.vy = this.baseVy + (dy / d) * force * 2;
+    } else {
+      this.vx += (this.baseVx - this.vx) * 0.04;
+      this.vy += (this.baseVy - this.vy) * 0.04;
+    }
+    this.x += this.vx;
+    this.y += this.vy;
+    this.life++;
+
+    // Wrap around edges instead of dying — keeps particles spread everywhere
+    if (this.x < -20) this.x = W + 20;
+    if (this.x > W + 20) this.x = -20;
+    if (this.y < -20) this.y = H + 20;
+    if (this.y > H + 20) this.y = -20;
+
+    // Occasionally re-randomize direction for organic feel
+    if (this.life > this.maxLife) {
+      const angle = Math.random() * Math.PI * 2;
+      const speed = Math.random() * 0.35 + 0.08;
+      this.baseVx = Math.cos(angle) * speed;
+      this.baseVy = Math.sin(angle) * speed;
+      this.life = 0;
+      this.maxLife = Math.random() * 500 + 300;
+    }
+  };
+
+  Particle.prototype.draw = function() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fillStyle = ORANGE + this.alpha + ')';
+    ctx.fill();
+  };
+
+  for (let i = 0; i < COUNT; i++) particles.push(new Particle());
+
+  resize();
+  window.addEventListener('resize', resize);
+  document.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+
+  function loop() {
+    ctx.clearRect(0, 0, W, H);
+
+    // Draw connections between nearby particles
+    for (let i = 0; i < COUNT; i++) {
+      for (let j = i + 1; j < COUNT; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < MAX_DIST) {
+          const op = 0.22 * (1 - dist / MAX_DIST);
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = ORANGE + op + ')';
+          ctx.lineWidth = 0.7;
+          ctx.stroke();
+        }
+      }
+      particles[i].update();
+      particles[i].draw();
+    }
+
+    // Mouse node — glowing dot + lines to nearby particles
+    if (mouse.x > 0 && mouse.x < W) {
+      for (let i = 0; i < COUNT; i++) {
+        const dx = particles[i].x - mouse.x;
+        const dy = particles[i].y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < MOUSE_DIST) {
+          const op = 0.4 * (1 - dist / MOUSE_DIST);
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.strokeStyle = ORANGE + op + ')';
+          ctx.lineWidth = 0.6;
+          ctx.stroke();
+        }
+      }
+      ctx.beginPath();
+      ctx.arc(mouse.x, mouse.y, 3, 0, Math.PI * 2);
+      ctx.fillStyle = ORANGE + '0.6)';
+      ctx.fill();
+    }
+
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+
+/* ── Staggered hero entrance ── */
+(function() {
+  const els = document.querySelectorAll('.anim-in');
+  els.forEach((el, i) => {
+    setTimeout(() => el.classList.add('done'), 100 + i * 120);
+  });
+})();
+
+/* ── Count-up stats ── */
+(function() {
+  const stats = document.querySelectorAll('[data-count]');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.count);
+      const suffix = el.dataset.suffix || '';
+      let start = 0;
+      const duration = 1200;
+      const startTime = performance.now();
+      function tick(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const val = Math.round(eased * target);
+        el.textContent = val + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      observer.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  stats.forEach(s => observer.observe(s));
+})();
+
+/* ── Reveal on scroll (supplement existing main.js) ── */
+(function() {
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => obs.observe(r));
+})();
+</script>
+<style>@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}</style>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blake Warner - UX Designer</title>
+  <meta name="description" content="UX Designer specializing in SaaS, mobile, and AI-augmented design. Pacific Northwest.">
+  <meta property="og:title" content="Blake Warner — UX Designer" />
+  <meta property="og:description" content="2+ years shipping real SaaS products. Design-led, detail-oriented, AI-empowered. Open to full-time UX roles." />
+  <meta property="og:image" content="https://bleckocodes.github.io/blake-warner-portfolio/ProfilePictureProject2.png" />
+  <meta property="og:url" content="https://bleckocodes.github.io/blake-warner-portfolio/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="css/style.css">
+  <style>
     /* ââ Canvas + cursor orb ââ */
     #hero-canvas { position:fixed; top:0; left:0; width:100vw; height:100vh; pointer-events:none; z-index:0; opacity:1; }
     .cursor-orb { position:fixed; width:400px; height:400px; border-radius:50%; background:radial-gradient(circle,rgba(201,104,32,.07) 0%,transparent 70%); pointer-events:none; z-index:0; transform:translate(-50%,-50%); transition:left .12s ease,top .12s ease; }
