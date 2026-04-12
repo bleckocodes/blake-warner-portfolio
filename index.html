@@ -32,11 +32,11 @@
     .strip-skill:hover { border-color:var(--orange); color:var(--orange); }
 
     /* ── Featured work grid ── */
-    .featured-grid { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:1.25rem; margin-top:3rem; }
+    .featured-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:3rem; }
     @media(max-width:860px) { .featured-grid { grid-template-columns:1fr 1fr; } }
     @media(max-width:560px) { .featured-grid { grid-template-columns:1fr; } }
-    .card-feature-tall .thumb { height:320px !important; }
-    .card-sm .thumb { height:180px !important; }
+    .featured-grid .thumb { height:200px !important; }
+    
 
     /* ── Making section ── */
     .making-strip { background:var(--bg2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
@@ -146,7 +146,7 @@
     <h2 class="s-title reveal d1">Case studies and <em>projects</em></h2>
     <p class="s-intro reveal d2">End-to-end design across real products — shipped interfaces, design systems, and prototypes used in production.</p>
     <div class="featured-grid">
-      <a href="case-onboarding.html" class="card card-feature-tall reveal">
+      <a href="case-onboarding.html" class="card reveal">
         <div class="thumb"><img src="webp-Portfolio-images/budget-consulting-ux-case-study_compressed.webp" alt="SaaS Onboarding Redesign" loading="lazy"></div>
         <div class="card-body">
           <span class="card-tag">Case Study · Capstone</span>
@@ -155,8 +155,7 @@
         </div>
         <div class="card-footer"><span class="card-year">2024 · Heroic Development</span><div class="card-arrow">→</div></div>
       </a>
-      <div style="display:flex;flex-direction:column;gap:1.25rem;">
-        <a href="professional.html" class="card card-sm reveal d1">
+      <a href="professional.html" class="card reveal d1">
           <div class="thumb"><img src="webp-Portfolio-images/ux-case-study-dark-theme_compressed.webp" alt="Professional industry work" loading="lazy"></div>
           <div class="card-body">
             <span class="card-tag">Industry · 2 Years</span>
@@ -164,8 +163,8 @@
             <p class="card-desc">Two years of SaaS design — systems, flows, responsive web and mobile across six products.</p>
           </div>
           <div class="card-footer"><span class="card-year">2023–2026</span><div class="card-arrow">→</div></div>
-        </a>
-        <a href="case-gamification.html" class="card card-sm reveal d2">
+      </a>
+      <a href="case-gamification.html" class="card reveal d2">
           <div class="thumb"><img src="webp-Portfolio-images/life-lyrics-app-case-study_compressed.webp" alt="Life Lyrics App" loading="lazy"></div>
           <div class="card-body">
             <span class="card-tag">App Design · Concept</span>
@@ -173,10 +172,8 @@
             <p class="card-desc">Full visual design system — 3 phases, style guide, high-fidelity prototype.</p>
           </div>
           <div class="card-footer"><span class="card-year">2023 · Academic</span><div class="card-arrow">→</div></div>
-        </a>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:1.25rem;">
-        <a href="case-mercari.html" class="card card-sm reveal d1">
+      </a>
+      <a href="case-mercari.html" class="card reveal d1">
           <div class="thumb"><img src="webp-Portfolio-images/notables-app-case-study_compressed.webp" alt="Mercari Usability" loading="lazy"></div>
           <div class="card-body">
             <span class="card-tag">Usability Study</span>
@@ -184,8 +181,8 @@
             <p class="card-desc">14 issues. One severity-4 critical bug with 100% task failure rate.</p>
           </div>
           <div class="card-footer"><span class="card-year">2023 · Academic</span><div class="card-arrow">→</div></div>
-        </a>
-        <a href="case-prayr.html" class="card card-sm reveal d2">
+      </a>
+      <a href="case-prayr.html" class="card reveal d2">
           <div class="thumb"><img src="webp-Portfolio-images/prayr-app-ux-research-cover_compressed.webp" alt="Prayr App" loading="lazy"></div>
           <div class="card-body">
             <span class="card-tag">UX Study</span>
@@ -193,8 +190,7 @@
             <p class="card-desc">Mixed-methods study. 6 design recommendations delivered.</p>
           </div>
           <div class="card-footer"><span class="card-year">2023 · Academic</span><div class="card-arrow">→</div></div>
-        </a>
-      </div>
+      </a>
     </div>
     <div style="text-align:center;margin-top:2rem;">
       <a href="work.html" class="btn btn-ghost reveal">View all work →</a>
