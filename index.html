@@ -72,7 +72,25 @@
     .glitch-target:hover::after { opacity:.6; color:#7ab3d4; clip-path:polygon(0 60%,100% 60%,100% 75%,0 75%); transform:translateX(3px); animation:glitch-2 .3s steps(2) 1; }
     @keyframes glitch-1 { 0%,100%{transform:translateX(-3px)} 50%{transform:translateX(3px)} }
     @keyframes glitch-2 { 0%,100%{transform:translateX(3px)} 50%{transform:translateX(-3px)} }
-  </style>
+  
+    /* ── Solid bg on all sections below hero — canvas only shows through hero ── */
+    .skills-strip,
+    .section,
+    .making-strip,
+    .teaser,
+    .footer {
+      position: relative;
+      z-index: 1;
+      background-color: var(--bg);
+    }
+    .skills-strip,
+    .making-strip {
+      background-color: var(--bg2);
+    }
+    .teaser {
+      background-color: var(--bg2);
+    }
+</style>
 </head>
 <body>
 <div class="cursor-orb" id="cursor-orb"></div>
