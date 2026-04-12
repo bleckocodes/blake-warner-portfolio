@@ -3,8 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SaaS Onboarding Redesign - Blake Warner</title>
+  <title>Retirement Budget Calculator Onboarding - Blake Warner</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .cs-hero-img { width:100%; max-height:480px; object-fit:cover; object-position:center top; display:block; border-radius:var(--r-lg,10px); margin-bottom:2.5rem; }
+    .cs-section { margin-bottom:2.5rem; }
+    .cs-section h2 { font-size:1.1rem; font-weight:600; color:var(--txt); margin-bottom:0.75rem; padding-bottom:0.5rem; border-bottom:1px solid var(--line); }
+    .cs-section h3 { font-size:0.9rem; font-weight:600; color:var(--txt); margin:1rem 0 0.4rem; }
+    .cs-section p { font-size:0.875rem; color:var(--txt2); line-height:1.75; margin-bottom:0.75rem; }
+    .cs-section ul { font-size:0.875rem; color:var(--txt2); line-height:1.75; padding-left:1.25rem; margin-bottom:0.75rem; }
+    .cs-section ul li { margin-bottom:0.25rem; }
+    .cs-meta-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1rem; margin-bottom:2rem; }
+    .cs-meta-card { background:var(--bg2); border:1px solid var(--line); border-radius:var(--r-md,8px); padding:1rem; }
+    .cs-meta-label { font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:0.07em; color:var(--txt3); margin-bottom:0.3rem; }
+    .cs-meta-val { font-size:0.875rem; color:var(--txt); font-weight:500; }
+    .cs-callout { background:var(--bg2); border-left:3px solid var(--orange,#f97316); border-radius:0 var(--r-md) var(--r-md) 0; padding:1rem 1.25rem; margin:1.5rem 0; font-size:0.875rem; color:var(--txt2); line-height:1.75; }
+    .cs-callout strong { color:var(--txt); display:block; margin-bottom:0.25rem; }
+    .cs-outcome-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:1rem; margin:1.5rem 0; }
+    .cs-outcome { background:var(--bg2); border:1px solid var(--line); border-radius:var(--r-md); padding:1rem 1.25rem; text-align:center; }
+    .cs-outcome-num { font-size:1.6rem; font-weight:700; color:var(--orange,#f97316); display:block; }
+    .cs-outcome-label { font-size:0.75rem; color:var(--txt3); margin-top:0.25rem; }
+    .cs-img-block { width:100%; border-radius:var(--r-md); margin:1.25rem 0; overflow:hidden; border:1px solid var(--line); }
+    .cs-img-block img { width:100%; display:block; }
+    .cs-tag { display:inline-block; font-size:0.68rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; background:var(--bg2); border:1px solid var(--line); border-radius:100px; padding:3px 10px; color:var(--txt3); margin-bottom:1.25rem; }
+  </style>
 </head>
 <body>
 <nav class="nav">
@@ -20,82 +42,108 @@
   </div>
 </nav>
 <main class="page">
-  <div class="case-hero">
-    <a href="work.html" class="case-back">Back to work</a>
-    <h1>SaaS Onboarding <em>Redesign</em></h1>
-    <p class="case-sub">Redesigning a board management SaaS platform's onboarding experience to improve new-user activation and cut time-to-first-action.</p>
-  </div>
-  <div class="case-meta">
-    <div><div class="cm-label">My Role</div><div class="cm-val">Lead UX Designer</div></div>
-    <div><div class="cm-label">Timeline</div><div class="cm-val">12 weeks (Capstone)</div></div>
-    <div><div class="cm-label">Tools</div><div class="cm-val">Figma, FigJam, Maze</div></div>
-    <div><div class="cm-label">Context</div><div class="cm-val">Heroic Development</div></div>
-  </div>
-  <div style="max-width:100%;overflow:hidden;background:var(--bg2);border-bottom:1px solid var(--line)">
-    <div class="thumb" style="height:320px">
-      <img src="https://cdn.myportfolio.com/f7f1b0b7-fc0d-438a-83d2-fbc4a115d478/1a192995-9d64-4c95-a356-0cc28920595e_rwc_107x1443x678x508x32.png" alt="SaaS Onboarding case study" loading="lazy" onerror="this.style.display='none'">
-      <div class="thumb-fallback" style="background:linear-gradient(135deg,#1a2e28,#0f1a16)"><div class="thumb-icon-wrap">&#x1F9ED;</div></div>
-    </div>
-  </div>
   <div class="case-body reveal">
-    <h2>The Problem</h2>
-    <p>Onboarding is the moment a new user decides whether to stay or leave. The existing experience dropped users into a blank dashboard with minimal guidance, leaving them unsure where to start and what to do next. Users who did not complete a core action in their first session rarely returned.</p>
 
-    <h2>Users and Research</h2>
-    <p>I conducted discovery interviews with 6 target users - administrators and team leads responsible for managing organizational meetings and documentation. I also ran a competitive analysis of onboarding patterns across Notion, Monday.com, ClickUp, Loom, and Asana.</p>
-    <ul>
-      <li>Users felt overwhelmed by too many options at once - they needed a single clear first step to anchor to.</li>
-      <li>The existing onboarding skipped explaining the product's core value - users were not sure what success looked like.</li>
-      <li>Users expected progress indicators to know how close they were to finishing setup.</li>
-      <li>Personalization cues like role selection made users feel the product was built specifically for them.</li>
-    </ul>
+    <span class="cs-tag">Case Study · Capstone Project</span>
+    <h1 class="s-title" style="margin-bottom:0.5rem">Retirement Budget Calculator <em>Onboarding</em></h1>
+    <p style="color:var(--txt3);font-size:0.9rem;margin-bottom:2rem">Heroic Development &nbsp;·&nbsp; 2024 &nbsp;·&nbsp; UX Design Lead</p>
 
-    <h2>Design Process</h2>
-    <h3>Discovery to Define</h3>
-    <p>I mapped the current new-user journey and identified 4 critical drop-off moments. I developed user personas based on my interviews and set a primary design goal: get new users to complete their first core action within 5 minutes of signing up.</p>
-    <h3>Ideation to Wireframing</h3>
-    <p>I wireframed 3 competing onboarding flows focused on progressive disclosure - showing users only the options relevant to their current step. I ran a design critique with my capstone team to pressure-test each approach before committing to one direction.</p>
-    <h3>Prototyping to Testing</h3>
-    <p>I built a high-fidelity interactive prototype in Figma and conducted 5 moderated usability tests. Participants received a task prompt and no additional instructions. I observed where they hesitated, where they succeeded, and where they gave up.</p>
+    <div class="cs-img-block">
+      <img src="webp-Portfolio-images/budget-consulting-ux-case-study_compressed.webp" alt="Retirement Budget Calculator Onboarding case study full walkthrough" style="object-fit:cover;max-height:500px;object-position:center 20%;">
+    </div>
 
-    <h2>Key Design Decisions</h2>
-    <ul>
-      <li>Reduced onboarding from 9 steps to 4 by deferring configuration options that could be set later in the product.</li>
-      <li>Added a persistent progress bar so users always knew how close they were to completing setup.</li>
-      <li>Introduced role selection at step 1 to personalize the rest of the flow based on the user's answer.</li>
-      <li>Replaced the empty dashboard with a quick-start checklist surfacing 3 recommended next actions on first login.</li>
-    </ul>
+    <div class="cs-meta-grid">
+      <div class="cs-meta-card"><div class="cs-meta-label">Project</div><div class="cs-meta-val">Parker Financial</div></div>
+      <div class="cs-meta-card"><div class="cs-meta-label">My Role</div><div class="cs-meta-val">UX Designer (Lead)</div></div>
+      <div class="cs-meta-card"><div class="cs-meta-label">Timeline</div><div class="cs-meta-val">2024 · Capstone</div></div>
+      <div class="cs-meta-card"><div class="cs-meta-label">Tools</div><div class="cs-meta-val">Figma, FigJam</div></div>
+    </div>
 
-    <h2>Results</h2>
-    <div class="case-callout">
-      <h4>Outcomes</h4>
+    <div class="cs-section">
+      <h2>Project Background</h2>
+      <p>Parker Financial offers a Retirement Budget Calculator — a complex financial planning tool that helps users project their retirement income and expenses. The onboarding flow for new users was confusing and lengthy, leading to high drop-off before users ever reached the core value of the product.</p>
+      <p>This capstone project focused on redesigning the onboarding experience end-to-end: reducing friction, clarifying the value proposition, and getting users to their first meaningful output as quickly as possible.</p>
+    </div>
+
+    <div class="cs-section">
+      <h2>The Problem</h2>
+      <div class="cs-callout">
+        <strong>How might we redesign the onboarding flow so users understand the value of the calculator immediately and can complete their first plan without confusion?</strong>
+        The existing onboarding required users to input complex financial data before seeing any output — with no explanation of what they'd get or why it mattered. Most users abandoned before completing setup.
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <h2>Goal &amp; Scope</h2>
       <ul>
-        <li>4 of 5 usability test participants completed onboarding without assistance, up from 2 of 5 in the original flow.</li>
-        <li>Average time-to-first-action dropped from 8+ minutes to under 3.5 minutes in prototype testing.</li>
-        <li>Final design approved by stakeholders in a single revision cycle.</li>
-        <li>Delivered annotated Figma handoff file and complete flow documentation to the development team.</li>
+        <li>Redesign the onboarding flow from account creation through first meaningful output</li>
+        <li>Reduce time-to-first-value from 8+ minutes to under 3.5 minutes</li>
+        <li>Clarify what the tool does before asking users to input data</li>
+        <li>Create a step-by-step guided flow that surfaces progress and reduces cognitive load</li>
+        <li>Deliver a high-fidelity clickable prototype for stakeholder presentation</li>
       </ul>
     </div>
 
-    <h2>Key Learnings</h2>
-    <div class="case-learning">
-      <h4>What this project taught me</h4>
+    <div class="cs-section">
+      <h2>My Role</h2>
+      <p>I led the UX design on this project as the primary designer, working within a small team at Heroic Development. I was responsible for the full design process — from competitive analysis and user flows through wireframing, visual design, and the final prototype used in investor and stakeholder presentations.</p>
+    </div>
+
+    <div class="cs-section">
+      <h2>Target Users</h2>
+      <p>The primary user — who I referred to throughout the project as "Scot" — is a pre-retirement professional in their late 50s to mid 60s. They're financially literate but not tech-savvy. They want to understand roughly what retirement looks like for them but feel overwhelmed by complex financial software.</p>
       <ul>
-        <li>Less is more in onboarding. Every step I removed improved completion rates. My instinct was to show users everything the product could do - the research told me to show them one thing at a time.</li>
-        <li>Testing early is humbling and necessary. My first prototype had a critical navigation assumption that every single participant got wrong. Without watching real users interact with it, I never would have caught it.</li>
-        <li>Onboarding is a product promise. The clarity and tone of the first-run experience sets expectations for everything that follows. Designing it well is designing trust.</li>
+        <li>Age 55–65, approaching retirement</li>
+        <li>Comfortable with spreadsheets but not financial planning software</li>
+        <li>Values clarity and progress — wants to see results, not just input forms</li>
+        <li>Low tolerance for friction or jargon</li>
       </ul>
     </div>
-  </div>
-  <div class="case-nav">
-    <div class="case-nav-link">
-      <span class="case-nav-label">Previous</span>
-      <a href="work.html" class="case-nav-title">All work</a>
+
+    <div class="cs-section">
+      <h2>Design Process</h2>
+      <h3>Empathy &amp; Personas</h3>
+      <p>I developed a primary persona based on user interviews conducted with pre-retirees. The key insight: users didn't abandon because the tool was wrong for them — they abandoned because the first five minutes gave them no sense of what they'd get out of it. The value was invisible until too late in the flow.</p>
+
+      <h3>Onboarding Flow</h3>
+      <p>I mapped the full existing onboarding as a flow diagram in FigJam, identifying every decision point, every required input, and every moment where a user might question whether to continue. This revealed the core problem: the tool asked for too much before giving anything back.</p>
+      <p>The redesigned flow introduced a "what is a plan?" explainer screen early in the process, showed users a sample output before they committed to data entry, and broke the input process into clearly labeled stages with a visible progress indicator.</p>
+
+      <h3>Design Sketches → Wireframes → High Fidelity</h3>
+      <p>I started with rough sketches exploring different approaches to progressive disclosure — how to chunk the data input into digestible steps without losing the sense of progress. From sketches, I moved into low-fidelity wireframes in Figma to validate the flow structure, then iterated to high-fidelity screens matching Parker Financial's existing brand.</p>
     </div>
-    <div class="case-nav-link" style="text-align:right">
-      <span class="case-nav-label">Next</span>
-      <a href="case-gamification.html" class="case-nav-title">Gamification and AI</a>
+
+    <div class="cs-section">
+      <h2>Outcome</h2>
+      <div class="cs-outcome-grid">
+        <div class="cs-outcome"><span class="cs-outcome-num">57%</span><span class="cs-outcome-label">Reduction in time-to-first-value</span></div>
+        <div class="cs-outcome"><span class="cs-outcome-num">8→3.5</span><span class="cs-outcome-label">Minutes to complete first plan</span></div>
+        <div class="cs-outcome"><span class="cs-outcome-num">6+</span><span class="cs-outcome-label">Core screens redesigned</span></div>
+        <div class="cs-outcome"><span class="cs-outcome-num">✓</span><span class="cs-outcome-label">Prototype used in investor demo</span></div>
+      </div>
+      <p>The redesigned onboarding prototype was used directly in Heroic Development's investor presentations. The key design decision that drove results: introducing a sample output screen early in the flow so users understood the value before committing to data entry.</p>
     </div>
+
+    <div class="cs-section">
+      <h2>What I Learned</h2>
+      <ul>
+        <li>Progressive disclosure is only effective when users understand what they're progressing toward — showing the destination early changes everything.</li>
+        <li>Complex financial tools live or die on the first five minutes. If users don't understand the value proposition immediately, they leave.</li>
+        <li>Designing for low-tech-savvy users requires more than simplification — it requires building trust through clarity at every step.</li>
+      </ul>
+    </div>
+
+    <div class="case-nav">
+      <div class="case-nav-link">
+        <span class="case-nav-label">Previous</span>
+        <a href="work.html" class="case-nav-title">All work</a>
+      </div>
+      <div class="case-nav-link" style="text-align:right">
+        <span class="case-nav-label">Next</span>
+        <a href="case-gamification.html" class="case-nav-title">Gamification and AI</a>
+      </div>
+    </div>
+
   </div>
 </main>
 <footer class="footer">
