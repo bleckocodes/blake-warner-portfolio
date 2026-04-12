@@ -5,6 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prayr App UX Research - Blake Warner</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .cs-section { margin-bottom:2.5rem; }
+    .cs-section h2 { font-size:1.1rem; font-weight:600; color:var(--txt); margin-bottom:0.75rem; padding-bottom:0.5rem; border-bottom:1px solid var(--line); }
+    .cs-section h3 { font-size:0.9rem; font-weight:600; color:var(--txt); margin:1rem 0 0.4rem; }
+    .cs-section p { font-size:0.875rem; color:var(--txt2); line-height:1.75; margin-bottom:0.75rem; }
+    .cs-section ul { font-size:0.875rem; color:var(--txt2); line-height:1.75; padding-left:1.25rem; margin-bottom:0.75rem; }
+    .cs-section ul li { margin-bottom:0.3rem; }
+    .cs-meta-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1rem; margin-bottom:2rem; }
+    .cs-meta-card { background:var(--bg2); border:1px solid var(--line); border-radius:var(--r-md,8px); padding:1rem; }
+    .cs-meta-label { font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:0.07em; color:var(--txt3); margin-bottom:0.3rem; }
+    .cs-meta-val { font-size:0.875rem; color:var(--txt); font-weight:500; }
+    .cs-callout { background:var(--bg2); border-left:3px solid var(--orange,#f97316); border-radius:0 var(--r-md) var(--r-md) 0; padding:1rem 1.25rem; margin:1.5rem 0; font-size:0.875rem; color:var(--txt2); line-height:1.75; }
+    .cs-callout strong { color:var(--txt); display:block; margin-bottom:0.25rem; }
+    .cs-outcome-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1rem; margin:1.5rem 0; }
+    .cs-outcome { background:var(--bg2); border:1px solid var(--line); border-radius:var(--r-md); padding:1rem 1.25rem; text-align:center; }
+    .cs-outcome-num { font-size:1.6rem; font-weight:700; color:var(--orange,#f97316); display:block; }
+    .cs-outcome-label { font-size:0.75rem; color:var(--txt3); margin-top:0.25rem; }
+    .cs-img-block { width:100%; border-radius:var(--r-md); margin:1.25rem 0; overflow:hidden; border:1px solid var(--line); }
+    .cs-img-block img { width:100%; display:block; }
+    .cs-tag { display:inline-block; font-size:0.68rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; background:var(--bg2); border:1px solid var(--line); border-radius:100px; padding:3px 10px; color:var(--txt3); margin-bottom:1.25rem; }
+    .cs-finding { background:var(--bg2); border:1px solid var(--line); border-radius:var(--r-md); padding:1rem 1.25rem; margin-bottom:0.75rem; }
+    .cs-finding-num { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--orange,#f97316); margin-bottom:0.3rem; }
+    .cs-finding-title { font-size:0.9rem; font-weight:600; color:var(--txt); margin-bottom:0.3rem; }
+    .cs-finding-desc { font-size:0.8rem; color:var(--txt2); line-height:1.65; }
+    .cs-method-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1rem; margin:1rem 0; }
+    .cs-method-card { background:var(--bg2); border:1px solid var(--line); border-radius:var(--r-md); padding:1rem 1.25rem; }
+    .cs-method-icon { font-size:1.25rem; margin-bottom:0.5rem; }
+    .cs-method-title { font-size:0.875rem; font-weight:600; color:var(--txt); margin-bottom:0.25rem; }
+    .cs-method-desc { font-size:0.78rem; color:var(--txt2); line-height:1.6; }
+    .cs-rec-item { border:1px solid var(--line); border-radius:var(--r-md); padding:0.875rem 1.25rem; margin-bottom:0.6rem; display:flex; gap:1rem; align-items:flex-start; }
+    .cs-rec-num { background:var(--orange,#f97316); color:#fff; font-size:0.75rem; font-weight:700; border-radius:50%; width:22px; height:22px; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+    .cs-rec-body .cs-rec-title { font-size:0.875rem; font-weight:500; color:var(--txt); margin-bottom:0.2rem; }
+    .cs-rec-body .cs-rec-desc { font-size:0.8rem; color:var(--txt2); line-height:1.6; }
+  </style>
 </head>
 <body>
 <nav class="nav">
@@ -20,91 +54,138 @@
   </div>
 </nav>
 <main class="page">
-  <div class="case-hero">
-    <a href="work.html" class="case-back">Back to work</a>
-    <h1>Prayr App <em>UX Research</em></h1>
-    <p class="case-sub">Mixed-methods research for a faith-based mobile app, uncovering emotional and functional needs the product was not meeting.</p>
-  </div>
-  <div class="case-meta">
-    <div><div class="cm-label">My Role</div><div class="cm-val">UX Researcher (solo)</div></div>
-    <div><div class="cm-label">Timeline</div><div class="cm-val">5 weeks</div></div>
-    <div><div class="cm-label">Tools</div><div class="cm-val">Zoom, FigJam, Notion</div></div>
-    <div><div class="cm-label">Methods</div><div class="cm-val">Interviews, affinity map, personas</div></div>
-  </div>
-  <div style="max-width:100%;overflow:hidden;background:var(--bg2);border-bottom:1px solid var(--line)">
-    <div class="thumb" style="height:320px">
-      <img src="https://cdn.myportfolio.com/f7f1b0b7-fc0d-438a-83d2-fbc4a115d478/f16dbaf9-6f36-424c-9cd9-266f22ea0928_carw_4x3x32.png" alt="Prayr app research" loading="lazy" onerror="this.style.display='none'">
-      <div class="thumb-fallback" style="background:linear-gradient(135deg,#2e1a1a,#1c1010)"><div class="thumb-icon-wrap">&#x1F64F;</div></div>
-    </div>
-  </div>
   <div class="case-body reveal">
-    <h2>Project Overview</h2>
-    <p>This was a focused UX research study for a faith-based mobile app. My goal was not to redesign the app but to deeply understand user mental models, needs, and pain points - and deliver research findings that could directly inform the next design iteration.</p>
 
-    <h2>Research Questions</h2>
-    <ul>
-      <li>How do people currently manage and track their prayer practices, and what tools do they use?</li>
-      <li>What emotional and functional needs go unmet by existing tools?</li>
-      <li>Where does the app create friction, and what features resonate most with users?</li>
-    </ul>
+    <span class="cs-tag">UX Study · Academic · Mixed Methods</span>
+    <h1 class="s-title" style="margin-bottom:0.5rem">Prayr App <em>UX Research</em></h1>
+    <p style="color:var(--txt3);font-size:0.9rem;margin-bottom:2rem">Northwest University &nbsp;·&nbsp; 2023 &nbsp;·&nbsp; UX Researcher &nbsp;·&nbsp; w/ Ryan Anderson</p>
 
-    <h2>Method</h2>
-    <h3>Participants</h3>
-    <p>I recruited 6 participants with active personal prayer practices who had used at least one digital tool for spiritual reflection. Ages ranged from 22 to 58, representing three Christian denominations.</p>
-    <h3>Interviews</h3>
-    <p>45-minute semi-structured interviews over Zoom. I focused on habits before introducing any questions about the app - I wanted to understand users' mental models before priming them with the product's features.</p>
-    <h3>Synthesis</h3>
-    <p>I transcribed and coded all 6 interviews, then clustered insights into an affinity diagram in FigJam. I identified 5 major themes and developed 2 primary user personas.</p>
+    <div class="cs-img-block" style="max-width:480px;margin:0 auto 2rem;">
+      <img src="webp-Portfolio-images/prayr-app-ux-research-cover_compressed.webp" alt="Prayr App UX Research Study cover" style="object-fit:cover;">
+    </div>
 
-    <h2>Key Findings</h2>
-    <ul>
-      <li>Prayer is deeply personal. Users were wary of anything that felt performative. The group prayer feature made several participants uncomfortable because it implied others could see how often they prayed.</li>
-      <li>Physical journals were the primary competitor. 4 of 6 participants kept a physical journal alongside or instead of any digital tool. The non-screentime experience was part of the spiritual value.</li>
-      <li>Answered prayer tracking was the most valued and least developed feature. Users wanted to look back and see how prayers had been answered over time, but the app made this hard to access.</li>
-      <li>Reminders were polarizing. Some loved daily prompts; others had turned them off immediately. A flexible, non-streak-based gentle mode was consistently requested.</li>
-      <li>Simple is sacred. Users trusted the app more when it felt calm and uncluttered. Complexity felt at odds with the contemplative nature of prayer.</li>
-    </ul>
+    <div class="cs-meta-grid">
+      <div class="cs-meta-card"><div class="cs-meta-label">Product</div><div class="cs-meta-val">Prayr (iOS)</div></div>
+      <div class="cs-meta-card"><div class="cs-meta-label">Type</div><div class="cs-meta-val">Mixed-methods UX study</div></div>
+      <div class="cs-meta-card"><div class="cs-meta-label">Team</div><div class="cs-meta-val">Blake Warner, Ryan Anderson</div></div>
+      <div class="cs-meta-card"><div class="cs-meta-label">Deliverable</div><div class="cs-meta-val">6 design recommendations</div></div>
+    </div>
 
-    <h2>Design Recommendations</h2>
-    <ul>
-      <li>Private-by-default mode for all prayer entries. Sharing should require explicit opt-in, not opt-out.</li>
-      <li>Elevate Answered Prayer in navigation - front-and-center, not buried in settings.</li>
-      <li>Flexible user-controlled reminders with a gentle mode that nudges without streaks or pressure.</li>
-      <li>Simplified home screen showing only recent prayers and a single clear call to action.</li>
-      <li>Add a private reflection journal feature so users who rely on journaling do not need to switch apps.</li>
-      <li>Revise group sharing UI language to make privacy expectations explicit at the point of entry.</li>
-    </ul>
+    <div class="cs-section">
+      <h2>Overview</h2>
+      <p>Prayr is a faith-based mobile app for iOS designed to support personal and communal prayer practice. It provides daily prayer prompts, scripture, and tools for tracking prayer intentions — positioned in a competitive space alongside apps like Lectio 365 and Hallow.</p>
+      <p>This project was a full mixed-methods UX research study conducted as part of the UX Research class at Northwest University. The goal was to evaluate Prayr's usability and discoverability, identify friction points in the core user flows, and produce concrete design recommendations backed by both qualitative and quantitative data.</p>
+    </div>
 
-    <h2>Results</h2>
-    <div class="case-callout">
-      <h4>Research outcomes</h4>
+    <div class="cs-section">
+      <h2>Design Challenge</h2>
+      <div class="cs-callout">
+        <strong>How might we improve the discoverability and usability of Prayr's core features so users can engage more deeply with their prayer practice?</strong>
+        User interviews and task testing revealed that while the app's purpose resonated strongly with its audience, several key features were difficult to find, and the onboarding did little to orient new users to the app's full capability.
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <h2>Methodology</h2>
+      <div class="cs-method-grid">
+        <div class="cs-method-card">
+          <div class="cs-method-icon">🎙</div>
+          <div class="cs-method-title">User Interviews</div>
+          <div class="cs-method-desc">Semi-structured interviews with target users to understand prayer habits, app expectations, and initial reactions to Prayr's feature set.</div>
+        </div>
+        <div class="cs-method-card">
+          <div class="cs-method-icon">📋</div>
+          <div class="cs-method-title">Moderated Task Testing</div>
+          <div class="cs-method-desc">Participants completed scenario-based tasks covering core flows: setting up a prayer, finding community features, and navigating daily content.</div>
+        </div>
+        <div class="cs-method-card">
+          <div class="cs-method-icon">🗺</div>
+          <div class="cs-method-title">Affinity Mapping</div>
+          <div class="cs-method-desc">Qualitative data from interviews and sessions was synthesized via affinity mapping to surface recurring themes and patterns.</div>
+        </div>
+        <div class="cs-method-card">
+          <div class="cs-method-icon">📊</div>
+          <div class="cs-method-title">Performance Metrics</div>
+          <div class="cs-method-desc">Task completion rate and time-on-task tracked across all moderated sessions to provide quantitative baselines for each recommendation.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <h2>Task Objectives</h2>
       <ul>
-        <li>Delivered 6 prioritized design recommendations backed by direct user evidence from all 6 interviews.</li>
-        <li>2 primary personas developed capturing the core tension between community-focused and privacy-focused users.</li>
-        <li>Affinity diagram with 5 major themes spanning emotional needs, feature gaps, and trust factors.</li>
-        <li>Research findings presented to stakeholders with direct quotes and supporting evidence for each recommendation.</li>
+        <li>Evaluate discoverability of Prayr's core prayer-setting and tracking features</li>
+        <li>Measure task completion rate across primary user flows</li>
+        <li>Identify navigation and labeling issues that prevent feature access</li>
+        <li>Surface emotional friction points — moments where the app's tone or flow broke the meditative experience</li>
+        <li>Compare user mental models of "prayer app" against Prayr's actual feature structure</li>
       </ul>
     </div>
 
-    <h2>Key Learnings</h2>
-    <div class="case-learning">
-      <h4>What this project taught me</h4>
+    <div class="cs-section">
+      <h2>Key Findings</h2>
+      <div class="cs-finding">
+        <div class="cs-finding-num">Finding 01</div>
+        <div class="cs-finding-title">Core features are buried — discoverability is the top issue</div>
+        <div class="cs-finding-desc">Most participants failed to locate key features (prayer journal, community prayers) on the first attempt. Navigation labels used faith-specific terminology that didn't match users' mental models of how a prayer app should be organized.</div>
+      </div>
+      <div class="cs-finding">
+        <div class="cs-finding-num">Finding 02</div>
+        <div class="cs-finding-title">Onboarding doesn't orient users to the feature set</div>
+        <div class="cs-finding-desc">New users received no structured introduction to the app's capabilities. Most didn't discover the community prayer feature at all during sessions — not because it didn't resonate, but because they never found it.</div>
+      </div>
+      <div class="cs-finding">
+        <div class="cs-finding-num">Finding 03</div>
+        <div class="cs-finding-title">Visual hierarchy makes daily content feel like the only feature</div>
+        <div class="cs-finding-desc">The home screen emphasized daily devotional content so heavily that other features appeared secondary or optional. Users interpreted this as Prayr being only a devotional app, not a full prayer toolkit.</div>
+      </div>
+      <div class="cs-finding">
+        <div class="cs-finding-num">Finding 04</div>
+        <div class="cs-finding-title">The tone and visual design are strong — users connect emotionally</div>
+        <div class="cs-finding-desc">Every participant responded positively to the app's aesthetic — the nature imagery, calm color palette, and scripture integration felt appropriate and trustworthy. The emotional design is a genuine asset.</div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <h2>Recommendations</h2>
+      <div class="cs-rec-item"><div class="cs-rec-num">1</div><div class="cs-rec-body"><div class="cs-rec-title">Redesign navigation labels to match user language</div><div class="cs-rec-desc">Replace faith-specific tab names with plain-language equivalents. Users navigated by guessing — language should remove that friction.</div></div></div>
+      <div class="cs-rec-item"><div class="cs-rec-num">2</div><div class="cs-rec-body"><div class="cs-rec-title">Add a feature-aware onboarding flow</div><div class="cs-rec-desc">Introduce 3–4 key features during first launch with contextual tips. Focus on prayer journal and community — the features users missed most.</div></div></div>
+      <div class="cs-rec-item"><div class="cs-rec-num">3</div><div class="cs-rec-body"><div class="cs-rec-title">Restructure home screen hierarchy</div><div class="cs-rec-desc">Surface secondary features (journal, community) via home screen cards or quick-access buttons alongside daily content — not just in navigation tabs.</div></div></div>
+      <div class="cs-rec-item"><div class="cs-rec-num">4</div><div class="cs-rec-body"><div class="cs-rec-title">Add visual indicators for community activity</div><div class="cs-rec-desc">Notification badges and activity counts would signal that community features are active and used — reducing the perception that the app is purely personal.</div></div></div>
+      <div class="cs-rec-item"><div class="cs-rec-num">5</div><div class="cs-rec-body"><div class="cs-rec-title">Simplify the prayer creation flow</div><div class="cs-rec-desc">Reduce the number of steps to add a new prayer intention. Current flow requires 4+ taps to log a prayer — should be achievable in 2.</div></div></div>
+      <div class="cs-rec-item"><div class="cs-rec-num">6</div><div class="cs-rec-body"><div class="cs-rec-title">Leverage the strong visual identity more broadly</div><div class="cs-rec-desc">The emotional design is the app's biggest strength. Apply the same care to secondary screens and empty states — moments where the experience currently drops in quality.</div></div></div>
+    </div>
+
+    <div class="cs-section">
+      <h2>Outcome</h2>
+      <div class="cs-outcome-grid">
+        <div class="cs-outcome"><span class="cs-outcome-num">6</span><span class="cs-outcome-label">Design recommendations</span></div>
+        <div class="cs-outcome"><span class="cs-outcome-num">4</span><span class="cs-outcome-label">Key findings documented</span></div>
+        <div class="cs-outcome"><span class="cs-outcome-num">Mixed</span><span class="cs-outcome-label">Qual + quant methods</span></div>
+        <div class="cs-outcome"><span class="cs-outcome-num">NU</span><span class="cs-outcome-label">Northwest University project</span></div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <h2>What I Learned</h2>
       <ul>
-        <li>Research on sensitive topics requires careful interview framing. My first two questions were too direct and produced surface-level answers. Restructuring to ask about habits before attitudes dramatically improved the depth of insight I was able to gather.</li>
-        <li>The most important insight came from something not in the app at all - physical journals. Understanding why users preferred an analog tool helped me identify what the digital experience was failing to provide emotionally, not just functionally.</li>
-        <li>Personas built from real tension are more useful than averages. My two personas had genuinely conflicting needs. Holding both in mind throughout the recommendations process made the output stronger and more honest about the real trade-offs involved.</li>
+        <li>Affinity mapping is where the real insight happens — individual data points look scattered, but patterns become obvious when you spatially cluster them with a collaborator.</li>
+        <li>Users will tolerate bad navigation if the emotional experience is strong enough — but only up to a point. Prayr's visual design bought it a lot of goodwill that usability issues would otherwise have eroded.</li>
+        <li>Faith-based apps have a unique challenge: the tone of the product needs to feel consistent with the activity it supports. A jarring UI moment in a prayer app feels more disruptive than the same moment in a productivity tool.</li>
       </ul>
     </div>
-  </div>
-  <div class="case-nav">
-    <div class="case-nav-link">
-      <span class="case-nav-label">Previous</span>
-      <a href="case-mercari.html" class="case-nav-title">Mercari Usability Evaluation</a>
+
+    <div class="case-nav">
+      <div class="case-nav-link">
+        <span class="case-nav-label">Previous</span>
+        <a href="case-mercari.html" class="case-nav-title">Mercari Usability</a>
+      </div>
+      <div class="case-nav-link" style="text-align:right">
+        <span class="case-nav-label">Next</span>
+        <a href="case-vr.html" class="case-nav-title">VR Skill Labs</a>
+      </div>
     </div>
-    <div class="case-nav-link" style="text-align:right">
-      <span class="case-nav-label">Next</span>
-      <a href="case-vr.html" class="case-nav-title">VR Skill Labs Discovery</a>
-    </div>
+
   </div>
 </main>
 <footer class="footer">
