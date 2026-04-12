@@ -3,8 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Professional Work - Blake Warner</title>
+  <title>Industry Work - Blake Warner</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .cs-section { margin-bottom:2.5rem; }
+    .cs-section h2 { font-size:1.1rem; font-weight:600; color:var(--txt); margin-bottom:0.75rem; padding-bottom:0.5rem; border-bottom:1px solid var(--line); }
+    .cs-section h3 { font-size:0.9rem; font-weight:600; color:var(--txt); margin:1rem 0 0.4rem; }
+    .cs-section p { font-size:0.875rem; color:var(--txt2); line-height:1.75; margin-bottom:0.75rem; }
+    .cs-section ul { font-size:0.875rem; color:var(--txt2); line-height:1.75; padding-left:1.25rem; margin-bottom:0.75rem; }
+    .cs-section ul li { margin-bottom:0.3rem; }
+    .cs-meta-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1rem; margin-bottom:2rem; }
+    .cs-meta-card { background:var(--bg2); border:1px solid var(--line); border-radius:var(--r-md,8px); padding:1rem; }
+    .cs-meta-label { font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:0.07em; color:var(--txt3); margin-bottom:0.3rem; }
+    .cs-meta-val { font-size:0.875rem; color:var(--txt); font-weight:500; }
+    .cs-callout { background:var(--bg2); border-left:3px solid var(--orange,#f97316); border-radius:0 var(--r-md) var(--r-md) 0; padding:1rem 1.25rem; margin:1.5rem 0; font-size:0.875rem; color:var(--txt2); line-height:1.75; }
+    .cs-callout strong { color:var(--txt); display:block; margin-bottom:0.25rem; }
+    .cs-img-block { width:100%; border-radius:var(--r-md); margin:1.25rem 0; overflow:hidden; border:1px solid var(--line); }
+    .cs-img-block img { width:100%; display:block; }
+    .cs-img-caption { font-size:0.75rem; color:var(--txt3); text-align:center; margin-top:-0.5rem; margin-bottom:1.25rem; }
+    .cs-tag { display:inline-block; font-size:0.68rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; background:var(--bg2); border:1px solid var(--line); border-radius:100px; padding:3px 10px; color:var(--txt3); margin-bottom:1.25rem; }
+    .cs-role { background:var(--bg2); border:1px solid var(--line); border-radius:var(--r-lg,10px); overflow:hidden; margin-bottom:2rem; }
+    .cs-role-header { padding:1.25rem 1.5rem 1rem; border-bottom:1px solid var(--line); display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+    .cs-role-company { font-size:1rem; font-weight:600; color:var(--txt); margin-bottom:0.2rem; }
+    .cs-role-title { font-size:0.8rem; color:var(--txt3); }
+    .cs-role-dates { font-size:0.75rem; color:var(--txt3); background:var(--bg); border:1px solid var(--line); border-radius:100px; padding:3px 12px; white-space:nowrap; }
+    .cs-role-body { padding:1.25rem 1.5rem; }
+    .cs-role-body p { font-size:0.875rem; color:var(--txt2); line-height:1.75; margin-bottom:0.75rem; }
+    .cs-role-body ul { font-size:0.875rem; color:var(--txt2); line-height:1.75; padding-left:1.25rem; margin-bottom:0.75rem; }
+    .cs-role-body ul li { margin-bottom:0.3rem; }
+    .cs-tags-row { display:flex; flex-wrap:wrap; gap:6px; padding:0 1.5rem 1.25rem; }
+    .cs-pill { font-size:0.7rem; font-weight:500; background:var(--bg); border:1px solid var(--line); border-radius:100px; padding:3px 10px; color:var(--txt3); }
+    .cs-img-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.25rem 0; }
+    .cs-img-grid .cs-img-block { margin:0; }
+    .cs-outcome-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1rem; margin:1.5rem 0; }
+    .cs-outcome { background:var(--bg2); border:1px solid var(--line); border-radius:var(--r-md); padding:1rem; text-align:center; }
+    .cs-outcome-num { font-size:1.5rem; font-weight:700; color:var(--orange,#f97316); display:block; }
+    .cs-outcome-label { font-size:0.72rem; color:var(--txt3); margin-top:0.2rem; line-height:1.4; }
+  </style>
 </head>
 <body>
 <nav class="nav">
@@ -20,91 +55,143 @@
   </div>
 </nav>
 <main class="page">
-  <div class="case-hero">
-    <a href="work.html" class="case-back">Back to work</a>
-    <h1>Professional <em>Work</em></h1>
-    <p class="case-sub">Two years of industry UX at Heroic Development and Supergreen - SaaS products, design systems, and cross-functional collaboration.</p>
-  </div>
-  <div class="case-meta">
-    <div><div class="cm-label">Companies</div><div class="cm-val">Heroic Dev and Supergreen</div></div>
-    <div><div class="cm-label">Period</div><div class="cm-val">2023-2026</div></div>
-    <div><div class="cm-label">Tools</div><div class="cm-val">Figma, FigJam, Notion</div></div>
-    <div><div class="cm-label">Context</div><div class="cm-val">Professional / NDA-safe overview</div></div>
-  </div>
-  <div style="max-width:100%;overflow:hidden;background:var(--bg2);border-bottom:1px solid var(--line)">
-    <div class="thumb" style="height:320px">
-      <div class="thumb-fallback" style="background:linear-gradient(135deg,#1a2e1e,#101c12)"><div class="thumb-icon-wrap">&#x1F4BC;</div></div>
-    </div>
-  </div>
   <div class="case-body reveal">
 
-    <div class="case-warning">
-      <h4>Note on confidentiality</h4>
-      <p>Specific screen designs and client details from this work are covered by NDA. This page describes my process, contributions, and learnings without reproducing proprietary materials. I am happy to discuss this work in depth during an interview.</p>
+    <span class="cs-tag">Professional Work · Industry · 2023–2026</span>
+    <h1 class="s-title" style="margin-bottom:0.5rem">Heroic Development <em>&amp; Supergreen</em></h1>
+    <p style="color:var(--txt3);font-size:0.9rem;margin-bottom:2rem">Two years of industry SaaS design — real products, real users, shipped features</p>
+
+    <div class="cs-outcome-grid">
+      <div class="cs-outcome"><span class="cs-outcome-num">2+</span><span class="cs-outcome-label">Years professional experience</span></div>
+      <div class="cs-outcome"><span class="cs-outcome-num">6+</span><span class="cs-outcome-label">SaaS products shipped</span></div>
+      <div class="cs-outcome"><span class="cs-outcome-num">3</span><span class="cs-outcome-label">Roles across two companies</span></div>
+      <div class="cs-outcome"><span class="cs-outcome-num">✓</span><span class="cs-outcome-label">Investor-ready prototypes delivered</span></div>
     </div>
 
-    <h2>Heroic Development - <em>UX Designer</em> (2024-2025)</h2>
-    <p>Heroic Development builds board management software for organizational governance. I joined as a summer intern in 2023 and returned as a full designer during my senior capstone and after graduation. Over that time I contributed to the full core feature set of their SaaS platform.</p>
+    <div class="cs-section">
+      <h2>Overview</h2>
+      <p>Before finishing my degree at Northwest University, I started working in industry. What followed was two years of shipping real features for real users — moving between Heroic Development and Supergreen, working across a range of SaaS products from board management platforms to multi-product design systems.</p>
+      <p>This page covers the work I can describe without NDA restrictions. Screenshots and prototypes are available on request for roles that match the work.</p>
+    </div>
 
-    <h3>What I worked on</h3>
-    <ul>
-      <li>Dashboard and navigation - information architecture and main navigation design across the core product</li>
-      <li>Meeting manager - end-to-end flow for scheduling, running, and documenting board meetings including agenda builder and minute-taking UI</li>
-      <li>Document editor - in-app document editing with real-time collaboration indicators and version history access</li>
-      <li>Member manager - admin interface for role assignment and organizational permission management</li>
-      <li>Login and authentication - sign-in, password reset, and first-time-setup flows</li>
-      <li>Responsive design - all features designed for both desktop and mobile-optimized layouts simultaneously</li>
-    </ul>
+    <div class="cs-role">
+      <div class="cs-role-header">
+        <div>
+          <div class="cs-role-company">Supergreen</div>
+          <div class="cs-role-title">UX / Product Designer</div>
+        </div>
+        <div class="cs-role-dates">2025 – 2026</div>
+      </div>
+      <div class="cs-role-body">
+        <p>At Supergreen I designed across multiple SaaS products simultaneously, working inside a shared design system that spanned web and mobile. The pace was fast — weekly review cycles, rapid iteration, and close collaboration with developers to make sure nothing got lost in the handoff.</p>
+        <p>My work here covered the full design range: feature specs written before wireframing, component-level UI work inside the design system, responsive layouts for web and mobile, and light/dark mode across every surface.</p>
+        <ul>
+          <li>Designed high-fidelity interfaces across multiple SaaS products using a shared component library</li>
+          <li>Wrote feature specs before opening Figma — defined scope and edge cases up front</li>
+          <li>Operated in weekly review cycles with direct developer collaboration</li>
+          <li>Built and maintained components in the shared design system including light/dark mode variants</li>
+          <li>Contributed to responsive web and mobile layouts across the product suite</li>
+          <li>Managed multiple concurrent workstreams without dropping quality on any of them</li>
+        </ul>
+      </div>
+      <div class="cs-img-block" style="margin:0 1.5rem 1.25rem;width:auto;">
+        <img src="webp-Portfolio-images/ux-case-study-dark-theme_compressed.webp" alt="Supergreen SaaS product UI — dark theme design work" style="max-height:400px;object-fit:cover;object-position:top;">
+      </div>
+      <p class="cs-img-caption">Dark theme SaaS product UI — part of the Supergreen design system</p>
+      <div class="cs-tags-row">
+        <span class="cs-pill">Design Systems</span>
+        <span class="cs-pill">SaaS</span>
+        <span class="cs-pill">Light / Dark Mode</span>
+        <span class="cs-pill">Mobile</span>
+        <span class="cs-pill">Rapid Iteration</span>
+        <span class="cs-pill">Figma</span>
+        <span class="cs-pill">Component Libraries</span>
+      </div>
+    </div>
 
-    <h3>My process</h3>
-    <p>Each feature began with a written workflow document - I mapped user flows and edge cases in writing before opening Figma. I then moved through wireframes, design review, high-fidelity mockups, and interactive prototypes for developer handoff. I participated in weekly design reviews and iterated based on developer feasibility feedback throughout the entire cycle.</p>
+    <div class="cs-role">
+      <div class="cs-role-header">
+        <div>
+          <div class="cs-role-company">Heroic Development</div>
+          <div class="cs-role-title">UX Designer</div>
+        </div>
+        <div class="cs-role-dates">2024 – 2025</div>
+      </div>
+      <div class="cs-role-body">
+        <p>At Heroic Development I led design on a board management SaaS platform — a complex product used by organizations to run structured board meetings, manage documents, and track members and responsibilities. I owned six or more core features from discovery through developer handoff.</p>
+        <p>This is also where I did my capstone project — the Retirement Budget Calculator Onboarding redesign for Parker Financial, one of Heroic's clients. That project went from research to investor-ready prototype inside a single semester and was used directly in stakeholder presentations.</p>
+        <ul>
+          <li>Led design on 6+ core features: dashboard, meeting manager, document editor, member manager, authentication flows</li>
+          <li>Conducted competitive analysis across board management platforms to inform feature decisions</li>
+          <li>Designed responsive web and mobile interfaces across the full product</li>
+          <li>Built prototypes used in investor and stakeholder presentations</li>
+          <li>Collaborated directly with the development team to maintain design quality through build</li>
+          <li>Delivered the Parker Financial onboarding redesign as a capstone — cut time-to-first-value from 8+ minutes to under 3.5 minutes</li>
+        </ul>
+      </div>
+      <div class="cs-img-block" style="margin:0 1.5rem 0.5rem;width:auto;">
+        <img src="webp-Portfolio-images/ux-case-study-blue-screens_compressed.webp" alt="Heroic Development board management SaaS — professional UI design work" style="max-height:400px;object-fit:cover;object-position:top;">
+      </div>
+      <p class="cs-img-caption">Board management platform UI — Heroic Development professional work</p>
+      <div class="cs-tags-row">
+        <span class="cs-pill">SaaS</span>
+        <span class="cs-pill">Prototyping</span>
+        <span class="cs-pill">Competitive Analysis</span>
+        <span class="cs-pill">Figma</span>
+        <span class="cs-pill">Board Management</span>
+        <span class="cs-pill">Stakeholder Presentations</span>
+      </div>
+    </div>
 
-    <h3>Impact</h3>
-    <ul>
-      <li>Designed and delivered wireframes and prototypes for 6+ major feature areas from concept through developer handoff.</li>
-      <li>Conducted competitive analysis across 4 comparable SaaS platforms to benchmark usability and inform design decisions.</li>
-      <li>High-fidelity prototypes used directly in investor and stakeholder presentations, receiving positive feedback on quality and usability.</li>
-    </ul>
+    <div class="cs-role">
+      <div class="cs-role-header">
+        <div>
+          <div class="cs-role-company">Heroic Development</div>
+          <div class="cs-role-title">UX Design Intern</div>
+        </div>
+        <div class="cs-role-dates">Summer 2023</div>
+      </div>
+      <div class="cs-role-body">
+        <p>My first professional design role. I contributed wireframes and high-fidelity prototypes supporting the product planning process at Heroic Development. Several of the flows I designed as an intern became part of the core product and were iterated on in my later full-time role.</p>
+        <ul>
+          <li>Developed wireframes and high-fidelity prototypes for product planning sessions</li>
+          <li>Contributed flows that were integrated into the core product build</li>
+          <li>Learned to work inside an existing design system and extend it without breaking consistency</li>
+        </ul>
+      </div>
+      <div class="cs-tags-row">
+        <span class="cs-pill">Wireframing</span>
+        <span class="cs-pill">Prototyping</span>
+        <span class="cs-pill">Figma</span>
+      </div>
+    </div>
 
-    <h2>Supergreen - <em>UX / Product Designer</em> (2025-2026)</h2>
-    <p>At Supergreen I worked across multiple concurrent SaaS products, contributing to a shared design system and individual product interfaces. The fast-paced environment demanded high-quality work delivered in tight weekly cycles.</p>
-
-    <h3>What I worked on</h3>
-    <ul>
-      <li>Design system application - consistent component library applied across multiple products simultaneously</li>
-      <li>Light and dark mode - all interfaces designed for both modes, maintaining contrast ratios and visual hierarchy across themes</li>
-      <li>Messaging and notifications - real-time messaging UI, notification center, and alert patterns</li>
-      <li>Directory and resource features - searchable directory interfaces and resource library UIs for web and mobile</li>
-      <li>Feature specification - writing requirement documents before wireframing to align scope with product leads</li>
-      <li>Rapid iteration - operating in weekly review cycles, updating designs within tight turnaround windows</li>
-    </ul>
-
-    <h3>Impact</h3>
-    <ul>
-      <li>Contributed design deliverables across multiple SaaS products within a shared design system framework.</li>
-      <li>Maintained design-to-development handoff velocity within weekly sprint cycles.</li>
-      <li>Collaborated directly with developers to resolve implementation questions and preserve design quality through build.</li>
-    </ul>
-
-    <h2>Key Learnings</h2>
-    <div class="case-learning">
-      <h4>What working in industry taught me</h4>
+    <div class="cs-section">
+      <h2>Other design work</h2>
+      <h3>Orbit Aerospace — Brand Book</h3>
+      <p>A branding project for Orbit Aerospace, a fictional aerospace company. I designed a full brand book covering logo system, typography, color palette, iconography, and brand application guidelines. This was an academic project exploring brand identity design outside of UX — applying the same systematic thinking to visual identity.</p>
+      <div class="cs-img-block" style="max-width:420px;">
+        <img src="webp-Portfolio-images/orbit-aerospace-brand-book-iconography_compressed.webp" alt="Orbit Aerospace brand book iconography — Section 9" style="object-fit:contain;">
+      </div>
       <ul>
-        <li>Speed and quality require good systems, not a trade-off. Working in weekly review cycles made me better at scoping what could be designed well in a short window. Design systems were the key - a solid component library meant I could move fast without sacrificing consistency.</li>
-        <li>Writing before wireframing saved time, not lost it. Feature requirement documents forced scope clarity, surfaced edge cases early, and made developer conversations far more productive. I now do this on every project.</li>
-        <li>Feedback is the product. A design is not finished when you think it is good - it is finished when it has been tested by the team, reviewed by stakeholders, and validated against what developers can actually build. Learning to receive and act on feedback quickly without losing design quality is a real and learnable skill.</li>
+        <li>Designed a complete logo system with primary, secondary, and icon mark variants</li>
+        <li>Built a full brand book covering all usage guidelines across print and digital</li>
+        <li>Section 9 (Iconography) — developed a custom icon set consistent with the brand's aerospace identity</li>
+        <li>Orange + blue color palette conveying precision, technology, and exploration</li>
       </ul>
     </div>
-  </div>
-  <div class="case-nav">
-    <div class="case-nav-link">
-      <span class="case-nav-label">Previous</span>
-      <a href="case-vr.html" class="case-nav-title">VR Skill Labs Discovery</a>
+
+    <div class="case-nav">
+      <div class="case-nav-link">
+        <span class="case-nav-label">Previous</span>
+        <a href="case-vr.html" class="case-nav-title">VR Skill Labs</a>
+      </div>
+      <div class="case-nav-link" style="text-align:right">
+        <span class="case-nav-label">All work</span>
+        <a href="work.html" class="case-nav-title">Back to portfolio</a>
+      </div>
     </div>
-    <div class="case-nav-link" style="text-align:right">
-      <span class="case-nav-label">Next</span>
-      <a href="work.html" class="case-nav-title">All work</a>
-    </div>
+
   </div>
 </main>
 <footer class="footer">
