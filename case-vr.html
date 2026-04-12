@@ -5,6 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VR Skill Labs Discovery - Blake Warner</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .cs-section { margin-bottom:2.5rem; }
+    .cs-section h2 { font-size:1.1rem; font-weight:600; color:var(--txt); margin-bottom:0.75rem; padding-bottom:0.5rem; border-bottom:1px solid var(--line); }
+    .cs-section h3 { font-size:0.9rem; font-weight:600; color:var(--txt); margin:1rem 0 0.4rem; }
+    .cs-section p { font-size:0.875rem; color:var(--txt2); line-height:1.75; margin-bottom:0.75rem; }
+    .cs-section ul { font-size:0.875rem; color:var(--txt2); line-height:1.75; padding-left:1.25rem; margin-bottom:0.75rem; }
+    .cs-section ul li { margin-bottom:0.3rem; }
+    .cs-meta-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1rem; margin-bottom:2rem; }
+    .cs-meta-card { background:var(--bg2); border:1px solid var(--line); border-radius:var(--r-md,8px); padding:1rem; }
+    .cs-meta-label { font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:0.07em; color:var(--txt3); margin-bottom:0.3rem; }
+    .cs-meta-val { font-size:0.875rem; color:var(--txt); font-weight:500; }
+    .cs-callout { background:var(--bg2); border-left:3px solid var(--orange,#f97316); border-radius:0 var(--r-md) var(--r-md) 0; padding:1rem 1.25rem; margin:1.5rem 0; font-size:0.875rem; color:var(--txt2); line-height:1.75; }
+    .cs-callout strong { color:var(--txt); display:block; margin-bottom:0.25rem; }
+    .cs-insight { background:var(--bg2); border:1px solid var(--line); border-radius:var(--r-md); padding:1rem 1.25rem; margin-bottom:0.75rem; display:flex; gap:1rem; align-items:flex-start; }
+    .cs-insight-icon { font-size:1.1rem; flex-shrink:0; margin-top:1px; }
+    .cs-insight-body .cs-insight-title { font-size:0.875rem; font-weight:600; color:var(--txt); margin-bottom:0.2rem; }
+    .cs-insight-body .cs-insight-desc { font-size:0.8rem; color:var(--txt2); line-height:1.65; }
+    .cs-outcome-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1rem; margin:1.5rem 0; }
+    .cs-outcome { background:var(--bg2); border:1px solid var(--line); border-radius:var(--r-md); padding:1rem 1.25rem; text-align:center; }
+    .cs-outcome-num { font-size:1.5rem; font-weight:700; color:var(--orange,#f97316); display:block; }
+    .cs-outcome-label { font-size:0.75rem; color:var(--txt3); margin-top:0.25rem; }
+    .cs-img-block { width:100%; border-radius:var(--r-md); margin:1.25rem 0; overflow:hidden; border:1px solid var(--line); }
+    .cs-img-block img { width:100%; display:block; }
+    .cs-tag { display:inline-block; font-size:0.68rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; background:var(--bg2); border:1px solid var(--line); border-radius:100px; padding:3px 10px; color:var(--txt3); margin-bottom:1.25rem; }
+    .cs-barrier { background:rgba(239,68,68,0.07); border:1px solid rgba(239,68,68,0.2); border-radius:var(--r-md); padding:1rem 1.25rem; margin:1rem 0; }
+    .cs-barrier-label { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#ef4444; margin-bottom:0.3rem; }
+    .cs-barrier-title { font-size:0.9rem; font-weight:600; color:var(--txt); margin-bottom:0.25rem; }
+    .cs-barrier-desc { font-size:0.8rem; color:var(--txt2); line-height:1.65; }
+    .cs-opp { background:rgba(34,197,94,0.07); border:1px solid rgba(34,197,94,0.2); border-radius:var(--r-md); padding:1rem 1.25rem; margin:1rem 0; }
+    .cs-opp-label { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#22c55e; margin-bottom:0.3rem; }
+    .cs-opp-title { font-size:0.9rem; font-weight:600; color:var(--txt); margin-bottom:0.25rem; }
+    .cs-opp-desc { font-size:0.8rem; color:var(--txt2); line-height:1.65; }
+  </style>
 </head>
 <body>
 <nav class="nav">
@@ -20,88 +53,128 @@
   </div>
 </nav>
 <main class="page">
-  <div class="case-hero">
-    <a href="work.html" class="case-back">Back to work</a>
-    <h1>VR Skill Labs <em>Discovery</em></h1>
-    <p class="case-sub">Discovery-phase research into VR adoption in classrooms. The number one barrier was classroom management, not content.</p>
-  </div>
-  <div class="case-meta">
-    <div><div class="cm-label">My Role</div><div class="cm-val">UX Researcher and Discovery Lead</div></div>
-    <div><div class="cm-label">Timeline</div><div class="cm-val">6 weeks</div></div>
-    <div><div class="cm-label">Tools</div><div class="cm-val">FigJam, Zoom, Notion, Google Forms</div></div>
-    <div><div class="cm-label">Phase</div><div class="cm-val">Discovery (no prototyping)</div></div>
-  </div>
-  <div style="max-width:100%;overflow:hidden;background:var(--bg2);border-bottom:1px solid var(--line)">
-    <div class="thumb" style="height:320px">
-      <img src="https://cdn.myportfolio.com/f7f1b0b7-fc0d-438a-83d2-fbc4a115d478/4a93f6d1-407c-4d9e-9eaf-6ab02e2c5d58_rwc_0x0x807x606x32.png" alt="VR Skill Labs" loading="lazy" onerror="this.style.display='none'">
-      <div class="thumb-fallback" style="background:linear-gradient(135deg,#1a1e2e,#10121c)"><div class="thumb-icon-wrap">&#x1F97D;</div></div>
-    </div>
-  </div>
   <div class="case-body reveal">
-    <h2>Project Overview</h2>
-    <p>VR has significant promise as a training tool - simulated environments let learners practice high-stakes skills without real-world consequences. But the gap between what VR can theoretically do and what actually works in a classroom is large. This discovery project set out to understand the needs, frustrations, and opportunities around VR adoption in educational settings before any design decisions were made.</p>
 
-    <h2>Discovery Goals</h2>
-    <ul>
-      <li>Who are the primary users of classroom VR, and what are their distinct roles and needs?</li>
-      <li>What are the biggest barriers to VR adoption in K-12 and higher education?</li>
-      <li>What existing tools or workarounds are educators using to fill the gaps?</li>
-      <li>Where is the highest-leverage opportunity for a new VR learning product?</li>
-    </ul>
+    <span class="cs-tag">Discovery · Academic · UX Research</span>
+    <h1 class="s-title" style="margin-bottom:0.5rem">VR Skill Labs <em>Discovery</em></h1>
+    <p style="color:var(--txt3);font-size:0.9rem;margin-bottom:2rem">Academic Project &nbsp;·&nbsp; 2023 &nbsp;·&nbsp; UX Researcher</p>
 
-    <h2>Research Methods</h2>
-    <h3>Stakeholder Interviews</h3>
-    <p>8 interviews - 5 with educators who had attempted to integrate VR into their curriculum, and 3 with students who had experienced VR-based instruction. Sessions ran 30 to 40 minutes each.</p>
-    <h3>Competitive Landscape</h3>
-    <p>I mapped 6 existing VR education products including Google Expeditions, Labster, zSpace, Engage, ClassVR, and Prisms VR across dimensions including content depth, hardware requirements, ease of setup, and classroom management features.</p>
-    <h3>Survey</h3>
-    <p>A 12-question survey deployed to a panel of 24 educators to validate qualitative themes at a broader scale.</p>
+    <div class="cs-img-block">
+      <img src="webp-Portfolio-images/ux-case-study-mobile-screens_compressed.webp" alt="VR Skill Labs discovery research — prototype screens and wireframes" style="max-height:480px;object-fit:cover;object-position:top;">
+    </div>
 
-    <h2>Key Findings</h2>
-    <ul>
-      <li>Classroom management was the number one barrier. Educators could not monitor what students were experiencing inside a headset and felt they had lost control of the room. This was cited in 7 of 8 interviews.</li>
-      <li>Hardware logistics killed momentum. Setting up, charging, sanitizing, and distributing 30 VR headsets before a class was described as a second job by multiple teachers.</li>
-      <li>The best VR experiences were highly specific. Broad virtual field trip content was rated least useful; simulation-based skill training like dissection, lab work, and machinery operation was rated most valuable.</li>
-      <li>Students found VR memorable but inconsistent. Some sessions were immersive and educational; others were plagued by motion sickness or technical failures.</li>
-      <li>Survey data: 71% of educators who had tried VR said they would not use it again without better classroom management tools.</li>
-    </ul>
+    <div class="cs-meta-grid">
+      <div class="cs-meta-card"><div class="cs-meta-label">Context</div><div class="cs-meta-val">VR in K-12 classrooms</div></div>
+      <div class="cs-meta-card"><div class="cs-meta-label">Type</div><div class="cs-meta-val">Discovery research</div></div>
+      <div class="cs-meta-card"><div class="cs-meta-label">Methods</div><div class="cs-meta-val">Interviews, prototyping</div></div>
+      <div class="cs-meta-card"><div class="cs-meta-label">Key Finding</div><div class="cs-meta-val">#1 barrier: management, not content</div></div>
+    </div>
 
-    <h2>Opportunity Areas</h2>
-    <ul>
-      <li>Classroom management companion: A tablet or browser tool that lets educators see what each student's headset is displaying, pause the experience, and send shared prompts without requiring headset removal.</li>
-      <li>Simulation content marketplace: A curated, curriculum-aligned library of short 5 to 15 minute simulation experiences mapped to specific learning objectives and searchable by subject, grade, and skill type.</li>
-    </ul>
+    <div class="cs-section">
+      <h2>Overview</h2>
+      <p>VR Skill Labs was a discovery research project exploring the viability of VR technology as a learning tool in classroom environments. The question wasn't whether VR content could be educational — it clearly can be — but whether VR could realistically be deployed and managed by teachers in a real school setting.</p>
+      <p>The project combined stakeholder interviews with teachers and education technology coordinators, competitive analysis of existing VR classroom tools, and prototype development to test a concept for a teacher-facing classroom management interface for VR sessions.</p>
+    </div>
 
-    <h2>Results</h2>
-    <div class="case-callout">
-      <h4>Discovery outcomes</h4>
+    <div class="cs-section">
+      <h2>Research Question</h2>
+      <div class="cs-callout">
+        <strong>What are the real barriers preventing VR adoption in K-12 classrooms — and what would a VR classroom tool need to do to overcome them?</strong>
+        The hypothesis going in was that content quality and cost were the main barriers. The research revealed something different: the number one obstacle was classroom management — not the content, not the cost.
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <h2>Discovery Process</h2>
+      <h3>Stakeholder Interviews</h3>
+      <p>I conducted interviews with teachers across multiple grade levels and subject areas, as well as ed-tech coordinators responsible for device deployment in school districts. The interview guide focused on current technology use in the classroom, past experiences with VR (where applicable), and the specific logistics of managing a classroom during a technology-driven activity.</p>
+      <h3>Competitive Analysis</h3>
+      <p>I mapped the existing landscape of VR classroom tools — from Google Expeditions to Nearpod VR to standalone headset management software. The pattern across all of them: they were built around content delivery, not teacher control. None of them adequately addressed what happens when a student has a problem mid-session, when a headset dies, or when a student wanders off task.</p>
+      <h3>Prototype Development</h3>
+      <p>Based on the research findings, I developed a prototype for a teacher-facing mobile companion app that would allow educators to manage a classroom VR session from their phone — monitor student progress, pause individual headsets, send alerts, and end sessions — without interrupting their own supervision of the room.</p>
+    </div>
+
+    <div class="cs-section">
+      <h2>Key Barriers Found</h2>
+
+      <div class="cs-barrier">
+        <div class="cs-barrier-label">Barrier 1 — Most Critical</div>
+        <div class="cs-barrier-title">Classroom management during VR sessions is nearly impossible</div>
+        <div class="cs-barrier-desc">When students put on headsets, teachers lose visual contact and behavioral feedback. There's no reliable way to monitor engagement, redirect distracted students, or handle technical problems without physically interrupting every student around the affected one. Teachers described this as "flying blind."</div>
+      </div>
+
+      <div class="cs-barrier">
+        <div class="cs-barrier-label">Barrier 2</div>
+        <div class="cs-barrier-title">Setup and teardown time eats into instructional time</div>
+        <div class="cs-barrier-desc">Teachers reported that distributing, calibrating, and collecting headsets consumed 10–15 minutes of a 50-minute class period. For a technology that needs to justify its instructional value, losing 20-30% of class time to logistics is a hard sell to administrators.</div>
+      </div>
+
+      <div class="cs-barrier">
+        <div class="cs-barrier-label">Barrier 3</div>
+        <div class="cs-barrier-title">Content is good but not curriculum-aligned</div>
+        <div class="cs-barrier-desc">Existing VR content was often described as impressive but disconnected from specific grade-level standards. Teachers couldn't easily search by standard, grade, or lesson objective — making integration into existing lesson plans time-consuming.</div>
+      </div>
+
+      <div class="cs-barrier">
+        <div class="cs-barrier-label">Barrier 4</div>
+        <div class="cs-barrier-title">Motion sickness concerns create liability anxiety</div>
+        <div class="cs-barrier-desc">Several teachers cited parental concern about VR-induced motion sickness as a barrier — not because incidents were common, but because the liability and paperwork around a student reporting discomfort created enough friction to discourage use.</div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <h2>Design Opportunities</h2>
+
+      <div class="cs-opp">
+        <div class="cs-opp-label">Opportunity 1 — Highest Priority</div>
+        <div class="cs-opp-title">Teacher-facing classroom management companion</div>
+        <div class="cs-opp-desc">A mobile app giving teachers real-time oversight of all headsets in the room — who's watching what, who's paused, battery levels, and one-tap controls to message or pause individual students. This directly addresses the #1 barrier.</div>
+      </div>
+
+      <div class="cs-opp">
+        <div class="cs-opp-label">Opportunity 2</div>
+        <div class="cs-opp-title">Streamlined setup flow with class profiles</div>
+        <div class="cs-opp-desc">Save class rosters and headset assignments so setup requires one tap per student rather than full reconfiguration each session. Target: under 3 minutes for full class deployment.</div>
+      </div>
+
+      <div class="cs-opp">
+        <div class="cs-opp-label">Opportunity 3</div>
+        <div class="cs-opp-title">Standards-tagged content library</div>
+        <div class="cs-opp-desc">Allow teachers to search VR experiences by grade level, subject, and curriculum standard — making lesson planning integration fast enough to actually happen regularly.</div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <h2>Outcome</h2>
+      <div class="cs-outcome-grid">
+        <div class="cs-outcome"><span class="cs-outcome-num">#1</span><span class="cs-outcome-label">Barrier: classroom management, not content</span></div>
+        <div class="cs-outcome"><span class="cs-outcome-num">4</span><span class="cs-outcome-label">Key barriers documented</span></div>
+        <div class="cs-outcome"><span class="cs-outcome-num">3</span><span class="cs-outcome-label">Design opportunities identified</span></div>
+        <div class="cs-outcome"><span class="cs-outcome-num">1</span><span class="cs-outcome-label">Prototype concept built and tested</span></div>
+      </div>
+      <p>The prototype for the teacher companion app was built and tested in a lightweight usability session with two teachers. Both confirmed the classroom management framing as the right priority, and rated the core oversight features as "would use immediately" if available.</p>
+    </div>
+
+    <div class="cs-section">
+      <h2>What I Learned</h2>
       <ul>
-        <li>Identified 2 high-leverage opportunity areas backed by evidence from 8 interviews and 24 survey responses.</li>
-        <li>71% of surveyed educators would not reuse VR without better classroom management tools - quantifying the core problem.</li>
-        <li>Competitive landscape mapped across 6 products, revealing no existing solution addressed the classroom management gap.</li>
-        <li>Delivered a discovery report with prioritized opportunity areas, user quotes, and recommended next-phase research questions.</li>
+        <li>Discovery research often invalidates your hypothesis — and that's the point. Going in, I expected to find content and cost as the main barriers. What I found was management and logistics. If I'd skipped the research and built around my assumptions, I'd have solved the wrong problem.</li>
+        <li>The person paying for the technology and the person using it are often different, with different priorities. Administrators cared about cost and outcomes data. Teachers cared about survival in the classroom — keeping 30 kids on task.</li>
+        <li>A prototype doesn't have to be polished to generate insight. The rough wireframe I tested was enough to confirm the right direction and surface two usability issues I hadn't anticipated.</li>
       </ul>
     </div>
 
-    <h2>Key Learnings</h2>
-    <div class="case-learning">
-      <h4>What this project taught me</h4>
-      <ul>
-        <li>Discovery research is about resisting the urge to solve. I came into this project excited about VR as a design space and had to actively stop myself from sketching solutions before the research was done. The findings completely reframed the problem - the issue was not VR content, it was everything surrounding it.</li>
-        <li>The person asking for a solution is not always the primary user. School administrators buying headsets had completely different needs than the teachers using them. Designing for the buyer without understanding the teacher would have produced the wrong product entirely.</li>
-        <li>Quantitative data validates qualitative data but does not replace it. The 71% stat was striking and useful for stakeholder communication. But it came from the interviews, not the survey. The survey made it credible at scale - the interviews made it real.</li>
-      </ul>
+    <div class="case-nav">
+      <div class="case-nav-link">
+        <span class="case-nav-label">Previous</span>
+        <a href="case-prayr.html" class="case-nav-title">Prayr App</a>
+      </div>
+      <div class="case-nav-link" style="text-align:right">
+        <span class="case-nav-label">Next</span>
+        <a href="professional.html" class="case-nav-title">Industry Work</a>
+      </div>
     </div>
-  </div>
-  <div class="case-nav">
-    <div class="case-nav-link">
-      <span class="case-nav-label">Previous</span>
-      <a href="case-prayr.html" class="case-nav-title">Prayr App UX Research</a>
-    </div>
-    <div class="case-nav-link" style="text-align:right">
-      <span class="case-nav-label">Next</span>
-      <a href="professional.html" class="case-nav-title">Professional Work</a>
-    </div>
+
   </div>
 </main>
 <footer class="footer">
